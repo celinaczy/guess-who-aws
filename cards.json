@@ -1,0 +1,629 @@
+{
+  "Storage": [
+    {
+      "name": "S3 Standard",
+      "features": [
+        "Provides object storage",
+        "Designed for frequently accessed data",
+        "Offers high durability and availability",
+        "Delivers low latency and high throughput",
+        "Is highly scalable",
+        "Data is stored in containers called \"buckets\"",
+        "Supports server-side encryption",
+        "Billed on a pay-as-you-go model"
+      ]
+    },
+    {
+      "name": "S3 Glacier Instant Retrieval",
+      "features": [
+        "Provides object storage",
+        "Designed for long-term data archiving",
+        "Offers millisecond access for archived data",
+        "Ideal for data accessed once per quarter",
+        "Has a lower storage cost than S3 Standard",
+        "Incurs a fee for data retrieval",
+        "Is a fully managed service",
+        "Offers high durability"
+      ]
+    },
+    {
+      "name": "S3 Glacier Deep Archive",
+      "features": [
+        "Provides object storage",
+        "Designed for long-term data archiving",
+        "Offers the absolute lowest storage cost on AWS",
+        "Retrieval time is within 12 hours",
+        "A common replacement for on-premise tape backups",
+        "Used for compliance and data retention",
+        "Is a fully managed service",
+        "Offers high durability"
+      ]
+    },
+    {
+      "name": "EBS (Elastic Block Store)",
+      "features": [
+        "Provides block-level storage volumes",
+        "Used with Amazon EC2 instances",
+        "Can only be attached to a single EC2 instance at a time",
+        "Data persists independently of the instance's life",
+        "Lives within a single Availability Zone",
+        "Performance is measured in IOPS",
+        "Backups are done via EBS Snapshots",
+        "Is a fully managed service"
+      ]
+    },
+    {
+      "name": "EFS (Elastic File System)",
+      "features": [
+        "Provides scalable file storage",
+        "Used with Amazon EC2 instances",
+        "Can be accessed by thousands of instances concurrently",
+        "Uses the Network File System (NFS) protocol",
+        "Is a regional service (accessible across AZs)",
+        "Automatically grows and shrinks as you add/remove files",
+        "Billed on a pay-as-you-go model",
+        "Is a fully managed service"
+      ]
+    },
+    {
+      "name": "Amazon FSx",
+      "features": [
+        "Provides fully managed third-party file systems",
+        "FSx for Windows File Server: For Windows apps (SMB)",
+        "FSx for Lustre: For High-Performance Computing (HPC)",
+        "Offers high levels of performance and scalability",
+        "Integrates with other AWS services",
+        "Is a fully managed service",
+        "Reduces operational overhead",
+        "Billed on a pay-as-you-go model"
+      ]
+    },
+    {
+      "name": "AWS Backup",
+      "features": [
+        "Provides a centralized backup service",
+        "Automates data protection across AWS services",
+        "Uses policy-based automation for backups",
+        "Supports services like EC2, EBS, RDS, and DynamoDB",
+        "Can create cross-region backups for disaster recovery",
+        "Is a fully managed service",
+        "Helps meet compliance requirements",
+        "Monitors backup and restore activity"
+      ]
+    },
+    {
+      "name": "AWS Storage Gateway",
+      "features": [
+        "Is a hybrid cloud storage service",
+        "Connects on-premises applications to AWS storage",
+        "Provides File, Volume, and Tape interfaces",
+        "Caches frequently accessed data on-premises",
+        "Is a fully managed service",
+        "Optimizes data transfer to and from AWS",
+        "Helps with migration and tiered storage",
+        "Supports standard storage protocols (NFS, SMB, iSCSI)"
+      ]
+    }
+  ],
+  "Compute": [
+    {
+      "name": "EC2 (Elastic Compute Cloud)",
+      "features": [
+        "Provides virtual servers, known as \"instances\"",
+        "Offers secure and resizable compute capacity",
+        "User is responsible for managing the operating system",
+        "Can be launched in multiple Availability Zones",
+        "Supports various instance types for different workloads",
+        "Can be used with Auto Scaling groups",
+        "Billed on a pay-as-you-go or reserved model",
+        "Is a foundational AWS service"
+      ]
+    },
+    {
+      "name": "AWS Lambda",
+      "features": [
+        "Is a serverless compute service",
+        "Runs code in response to events (e.g., an S3 upload)",
+        "You don't manage any underlying servers",
+        "Scales automatically based on demand",
+        "Billed based on executions and duration",
+        "Has a maximum execution time of 15 minutes",
+        "Supports multiple programming languages",
+        "Is a core component of serverless architectures"
+      ]
+    },
+    {
+      "name": "ECS (Elastic Container Service)",
+      "features": [
+        "Is a fully managed container orchestration service",
+        "Supports Docker containers",
+        "Helps you run, stop, and manage containers on a cluster",
+        "Integrates with other AWS services like IAM and VPC",
+        "Can be run on EC2 instances (user-managed)",
+        "Can be run on AWS Fargate (serverless)",
+        "Is an AWS-proprietary service",
+        "Used for deploying microservices"
+      ]
+    },
+    {
+      "name": "EKS (Elastic Kubernetes Service)",
+      "features": [
+        "Is a fully managed Kubernetes service",
+        "Runs Kubernetes on AWS without you managing the control plane",
+        "Is certified Kubernetes-conformant",
+        "Used for containerized applications",
+        "Integrates with other AWS services",
+        "Can be run on EC2 instances (user-managed)",
+        "Can be run on AWS Fargate (serverless)",
+        "Ideal for teams with existing Kubernetes experience"
+      ]
+    },
+    {
+      "name": "AWS Fargate",
+      "features": [
+        "Is a serverless compute engine for containers",
+        "Works with both Amazon ECS and Amazon EKS",
+        "Removes the need to provision and manage servers",
+        "You just package your application in containers",
+        "You specify the CPU and memory requirements",
+        "Handles the underlying infrastructure scaling",
+        "Billed based on vCPU and memory used",
+        "Simplifies container operations"
+      ]
+    },
+    {
+      "name": "AWS Lightsail",
+      "features": [
+        "Is an easy-to-use cloud platform",
+        "Designed for simple applications and websites",
+        "Bundles a virtual machine, storage, and networking",
+        "Offers a simple, predictable monthly price",
+        "Is ideal for developers, students, and small businesses",
+        "Provides pre-configured application stacks",
+        "Includes DNS management and a static IP",
+        "Is a good starting point for learning AWS"
+      ]
+    },
+    {
+      "name": "AWS Batch",
+      "features": [
+        "Is a fully managed batch computing service",
+        "Plans, schedules, and executes batch workloads",
+        "Dynamically provisions optimal compute resources",
+        "Can use Spot Instances to reduce costs",
+        "No need to install or manage batch computing software",
+        "Used for financial analysis, scientific research, etc.",
+        "Is a regional service",
+        "Integrates with other AWS services"
+      ]
+    }
+  ],
+  "Databases": [
+    {
+      "name": "Amazon Aurora",
+      "features": [
+        "Is a relational database engine",
+        "Is compatible with MySQL and PostgreSQL",
+        "Offers up to 5x the performance of standard MySQL",
+        "Offers up to 3x the performance of standard PostgreSQL",
+        "Storage automatically scales up to 128 TB",
+        "Is a fully managed service",
+        "Provides high availability and durability",
+        "Is a cloud-native database"
+      ]
+    },
+    {
+      "name": "RDS (Relational Database Service)",
+      "features": [
+        "Is a managed relational database service",
+        "Automates time-consuming administration tasks",
+        "Supports multiple database engines (MySQL, Oracle, etc.)",
+        "Can be deployed in multiple Availability Zones (Multi-AZ)",
+        "Supports Read Replicas to increase read scalability",
+        "Is a fully managed service",
+        "User is responsible for managing the data and schema",
+        "Provides automated backups and patching"
+      ]
+    },
+    {
+      "name": "Amazon DynamoDB",
+      "features": [
+        "Is a NoSQL key-value and document database",
+        "Delivers single-digit millisecond performance at any scale",
+        "Is a fully managed service",
+        "Is a serverless database",
+        "Scales automatically to handle workload changes",
+        "Offers both on-demand and provisioned capacity modes",
+        "Supports ACID transactions",
+        "Can be used with DynamoDB Accelerator (DAX) for caching"
+      ]
+    },
+    {
+      "name": "Amazon Redshift",
+      "features": [
+        "Is a fully managed data warehousing service",
+        "Is designed for online analytical processing (OLAP)",
+        "Uses columnar storage for fast query performance",
+        "Can analyze petabytes of data",
+        "Uses standard SQL for querying",
+        "Integrates with various Business Intelligence (BI) tools",
+        "Is a fully managed service",
+        "Can query data directly in Amazon S3 (Redshift Spectrum)"
+      ]
+    },
+    {
+      "name": "Amazon ElastiCache",
+      "features": [
+        "Is a fully managed in-memory caching service",
+        "Improves application performance by caching data",
+        "Reduces the load on backend databases",
+        "Supports two open-source engines: Redis and Memcached",
+        "Delivers microsecond latency",
+        "Is a fully managed service",
+        "Used for real-time applications like leaderboards",
+        "Scales easily to meet demand"
+      ]
+    },
+    {
+      "name": "Amazon Neptune",
+      "features": [
+        "Is a fully managed graph database service",
+        "Is designed for highly connected datasets",
+        "Builds and runs applications that work with graphs",
+        "Is highly available, with read replicas and point-in-time recovery",
+        "Is a fully managed service",
+        "Used for social networking, fraud detection, and recommendations",
+        "Supports popular graph query languages",
+        "Is a purpose-built database"
+      ]
+    },
+    {
+      "name": "Amazon DocumentDB",
+      "features": [
+        "Is a fully managed document database service",
+        "Is compatible with the MongoDB API",
+        "Stores, queries, and indexes JSON-like data",
+        "Is highly available and durable by default",
+        "Is a fully managed service",
+        "Scales automatically to meet demand",
+        "Used for content management and mobile applications",
+        "Is a purpose-built database"
+      ]
+    },
+    {
+      "name": "Amazon OpenSearch",
+      "features": [
+        "Formerly known as Elasticsearch Service",
+        "Used for search, log analytics, and monitoring",
+        "Can visualize data with OpenSearch Dashboards",
+        "Is a fully managed service",
+        "Is highly scalable",
+        "Provides real-time search capabilities",
+        "Often used for analyzing log data from other services",
+        "Is a purpose-built database"
+      ]
+    }
+  ],
+  "Networking": [
+    {
+      "name": "VPC (Virtual Private Cloud)",
+      "features": [
+        "Provisions a logically isolated section of the AWS Cloud",
+        "Lets you define your own virtual network",
+        "You control your IP address range, subnets, and route tables",
+        "Enhances security by controlling inbound/outbound traffic",
+        "Is a foundational AWS service",
+        "Can be connected to your on-premises network",
+        "Is a regional service",
+        "Contains security groups and network ACLs"
+      ]
+    },
+    {
+      "name": "API Gateway",
+      "features": [
+        "Is a fully managed service for APIs",
+        "Acts as a \"front door\" for applications",
+        "Used to create, publish, maintain, and secure APIs",
+        "Supports RESTful APIs and WebSocket APIs",
+        "Can trigger AWS Lambda functions",
+        "Handles traffic management, authorization, and monitoring",
+        "Is a serverless service",
+        "Integrates with AWS WAF for protection"
+      ]
+    },
+    {
+      "name": "Route 53",
+      "features": [
+        "Is a scalable cloud Domain Name System (DNS) web service",
+        "Translates domain names to IP addresses",
+        "Can be used to register domain names",
+        "Offers various routing policies (e.g., Latency, Geolocation)",
+        "Can perform health checks on your resources",
+        "Is a global service",
+        "Is highly available and scalable",
+        "Integrates with other AWS services like ELB and CloudFront"
+      ]
+    },
+    {
+      "name": "CloudFront",
+      "features": [
+        "Is a global content delivery network (CDN) service",
+        "Delivers content to users with low latency",
+        "Caches data at edge locations around the world",
+        "Speeds up the delivery of static and dynamic web content",
+        "Integrates with AWS Shield for DDoS protection",
+        "Can be used with S3 to serve private content",
+        "Is a global service",
+        "Improves application performance and availability"
+      ]
+    },
+    {
+      "name": "Direct Connect",
+      "features": [
+        "Establishes a dedicated private network connection to AWS",
+        "Bypasses the public internet",
+        "Provides a more consistent network experience than VPN",
+        "Can reduce network costs and increase bandwidth",
+        "Is a physical connection, requiring setup time",
+        "Used for hybrid cloud workloads",
+        "Offers speeds from 50 Mbps up to 100 Gbps",
+        "Is not a fully managed service (requires coordination)"
+      ]
+    },
+    {
+      "name": "Elastic Load Balancing",
+      "features": [
+        "Automatically distributes incoming application traffic",
+        "Spreads traffic across multiple targets (e.g., EC2 instances)",
+        "Increases the fault tolerance of your applications",
+        "Has three types: Application, Network, and Gateway",
+        "Integrates with Auto Scaling to handle demand",
+        "Is a fully managed service",
+        "Can operate across multiple Availability Zones",
+        "Provides a single point of access (DNS name) for your app"
+      ]
+    },
+    {
+      "name": "AWS Transit Gateway",
+      "features": [
+        "Acts as a central hub to connect networks",
+        "Connects your VPCs and on-premises networks together",
+        "Simplifies your network architecture (hub-and-spoke model)",
+        "Avoids complex VPC peering relationships",
+        "Is a regional resource",
+        "Can be shared across multiple AWS accounts",
+        "Is a highly scalable and available service",
+        "Is a fully managed service"
+      ]
+    },
+    {
+      "name": "AWS Global Accelerator",
+      "features": [
+        "Improves global application availability and performance",
+        "Uses the AWS global network to direct traffic",
+        "Provides two static anycast IP addresses",
+        "Reduces latency by routing through optimal endpoints",
+        "Is a global service",
+        "Good for non-HTTP use cases like gaming (UDP)",
+        "Increases resilience by failing over between regions",
+        "Is a fully managed service"
+      ]
+    }
+  ],
+  "Application Integration": [
+    {
+      "name": "Amazon SQS",
+      "features": [
+        "Is a fully managed message queuing service",
+        "Used to decouple and scale microservices",
+        "Standard Queue: At-least-once delivery",
+        "FIFO Queue: First-in, first-out delivery",
+        "Helps to smooth out spiky traffic loads",
+        "Is a serverless service",
+        "Billed on a pay-as-you-go model",
+        "A core component of serverless architectures"
+      ]
+    },
+    {
+      "name": "Amazon SNS",
+      "features": [
+        "Is a fully managed Publish/Subscribe (Pub/Sub) service",
+        "A single message can be sent to many subscribers",
+        "Subscribers can be SQS queues, Lambda, HTTP, etc.",
+        "Used for sending notifications or fan-out messaging",
+        "Is a serverless service",
+        "Is highly available and durable",
+        "Billed on a pay-as-you-go model",
+        "A core component of event-driven architectures"
+      ]
+    },
+    {
+      "name": "AWS Step Functions",
+      "features": [
+        "Is a serverless function orchestrator",
+        "Lets you visually coordinate distributed applications",
+        "Sequences AWS Lambda functions and other services",
+        "Manages sequencing, error handling, and retries",
+        "Represented as state machines",
+        "Is a fully managed service",
+        "Used for building complex, multi-step workflows",
+        "Reduces the need for custom application code"
+      ]
+    },
+    {
+      "name": "Amazon AppFlow",
+      "features": [
+        "Is a fully managed integration service",
+        "Automates data flows between SaaS apps and AWS",
+        "Connects to sources like Salesforce, Slack, Zendesk",
+        "No code is required to set up data flows",
+        "Is a serverless service",
+        "Encrypts data in transit and at rest",
+        "Can trigger flows on a schedule or by events",
+        "Simplifies data transfer from third-party apps"
+      ]
+    }
+  ],
+  "Migration & Transfer": [
+    {
+      "name": "AWS DMS",
+      "features": [
+        "Stands for Database Migration Service",
+        "Helps migrate databases to AWS easily and securely",
+        "Source database remains fully operational during migration",
+        "Supports homogeneous migrations (e.g., Oracle to Oracle)",
+        "Supports heterogeneous migrations (e.g., Oracle to Aurora)",
+        "Can be used for continuous data replication",
+        "Is a fully managed service",
+        "Often used with the Schema Conversion Tool (SCT)"
+      ]
+    },
+    {
+      "name": "Application Migration Service (MGN)",
+      "features": [
+        "Is the primary service for lift-and-shift migrations",
+        "Minimizes downtime via continuous replication",
+        "Converts source servers to run natively on AWS",
+        "Can migrate from physical, virtual, or other clouds",
+        "Is a fully managed service",
+        "Replicates the entire source server including OS",
+        "Allows for non-disruptive testing before cutover",
+        "Simplifies and automates the rehosting process"
+      ]
+    }
+  ],
+  "Security": [
+    {
+      "name": "AWS WAF",
+      "features": [
+        "Is a web application firewall",
+        "Helps protect web applications from common exploits",
+        "Operates at Layer 7 (the application layer)",
+        "Blocks attacks like SQL injection and cross-site scripting",
+        "Attaches to CloudFront, ALB, or API Gateway",
+        "Uses rules to allow or block traffic",
+        "Can use managed rule sets from AWS or vendors",
+        "Is a fully managed service"
+      ]
+    },
+    {
+      "name": "AWS Shield",
+      "features": [
+        "Is a managed DDoS protection service",
+        "Safeguards applications running on AWS",
+        "Standard tier is enabled automatically for free",
+        "Advanced tier provides enhanced protections",
+        "Protects against network and transport layer attacks",
+        "Integrates with CloudFront, Route 53, and ELB",
+        "Is a fully managed service",
+        "Advanced tier includes 24/7 access to the DDoS Response Team"
+      ]
+    },
+    {
+      "name": "AWS KMS",
+      "features": [
+        "Stands for Key Management Service",
+        "Used to create and manage cryptographic keys",
+        "Controls the use of encryption across AWS services",
+        "Is a secure and resilient service using FIPS 140-2 validated hardware",
+        "Integrates with many AWS services for server-side encryption",
+        "Provides centralized control over keys",
+        "Is a regional service",
+        "Is a fully managed service"
+      ]
+    },
+    {
+      "name": "AWS Secrets Manager",
+      "features": [
+        "Used to manage, retrieve, and rotate secrets",
+        "Protects secrets like database credentials and API keys",
+        "Helps you replace hardcoded credentials in your code",
+        "Can automatically rotate secrets on a schedule",
+        "Integrates with RDS, Redshift, and DocumentDB",
+        "Is a fully managed service",
+        "Encrypts secrets at rest using AWS KMS",
+        "Provides fine-grained access control using IAM"
+      ]
+    },
+    {
+      "name": "Amazon Macie",
+      "features": [
+        "Is a data security and data privacy service",
+        "Uses machine learning to discover and protect sensitive data",
+        "Primarily works with data stored in Amazon S3",
+        "Can discover personally identifiable information (PII)",
+        "Provides dashboards and alerts on findings",
+        "Is a fully managed service",
+        "Helps you meet compliance regulations like GDPR",
+        "Continuously evaluates your S3 environment"
+      ]
+    },
+    {
+      "name": "Security Groups",
+      "features": [
+        "Acts as a virtual firewall for your EC2 instances",
+        "Controls inbound and outbound traffic at the instance level",
+        "Is a stateful firewall",
+        "This means return traffic is automatically allowed",
+        "You can only specify \"allow\" rules, not \"deny\" rules",
+        "Rules can be based on IP address or other security groups",
+        "Are associated with network interfaces",
+        "Is a foundational security concept in AWS"
+      ]
+    }
+  ],
+  "Management & Governance": [
+    {
+      "name": "AWS CloudFormation",
+      "features": [
+        "Is an Infrastructure as Code (IaC) service",
+        "Lets you model and provision AWS resources",
+        "Uses templates written in YAML or JSON",
+        "Provides a single source of truth for your infrastructure",
+        "Automates the process of setting up resources",
+        "Is a fully managed service",
+        "Helps ensure consistent and repeatable deployments",
+        "Reduces the risk of manual error"
+      ]
+    },
+    {
+      "name": "AWS Systems Manager",
+      "features": [
+        "Provides a unified user interface for operational tasks",
+        "Gives you visibility and control of your infrastructure",
+        "Can be used to automate patching and software installation",
+        "Session Manager provides secure instance access",
+        "Parameter Store securely stores configuration data",
+        "Is a fully managed service",
+        "Works for EC2 instances and on-premises servers",
+        "Helps you maintain security and compliance"
+      ]
+    },
+    {
+      "name": "AWS Cost Explorer",
+      "features": [
+        "Is a tool to visualize and understand your costs",
+        "Lets you view your AWS cost and usage over time",
+        "Can create custom reports and graphs",
+        "Can filter and group data by various dimensions",
+        "Provides forecasting for future costs",
+        "Is a fully managed service",
+        "Helps you identify cost-saving opportunities",
+        "Is accessed through the AWS Management Console"
+      ]
+    },
+    {
+      "name": "AWS Budgets",
+      "features": [
+        "Allows you to set custom budgets for your costs",
+        "Tracks your cost and usage against your budget",
+        "Alerts you when you exceed (or are about to exceed) a threshold",
+        "Alerts can be sent via email or SNS",
+        "Can be set for overall costs or for specific services/tags",
+        "Is a fully managed service",
+        "Helps you control and monitor your spending",
+        "Is accessed through the AWS Management Console"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.category-title {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.5rem;
+}
+
+.card {
+    height: 100%;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    font-weight: 300;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+}
+
+.card-text ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+.card-text li {
+    padding-bottom: 0.5rem;
+}
+
+/* Category Card Colors */
+.card.card-storage { background-color: #e7f3ff; } /* Light Blue */
+.card.card-compute { background-color: #e6f9f0; } /* Light Green */
+.card.card-database { background-color: #f3e8ff; } /* Light Purple */
+.card.card-networking { background-color: #fff4e6; } /* Light Orange */
+.card.card-integration { background-color: #e0fbf6; } /* Light Teal */
+.card.card-migration { background-color: #fde7f3; } /* Light Pink */
+.card.card-security { background-color: #feeeee; } /* Light Red */
+.card.card-management { background-color: #f8f9fa; border: 1px solid #dee2e6;} /* Light Grey */
