@@ -1,0 +1,434 @@
+{
+  "Storage": [
+    {
+      "name": "S3 Standard",
+      "logo": "https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg",
+      "features": [
+        "Provides object storage",
+        "Designed for frequently accessed data",
+        "Offers high durability and availability",
+        "Delivers low latency and high throughput",
+        "Is highly scalable",
+        "Data is stored in containers called \"buckets\"",
+        "Supports server-side encryption",
+        "Billed on a pay-as-you-go model"
+      ]
+    },
+    {
+      "name": "EFS",
+      "logo": "https://icon.icepanel.io/AWS/svg/Storage/EFS.svg",
+      "features": [
+        "Provides scalable file storage",
+        "Used with Amazon EC2 instances",
+        "Can be accessed by thousands of instances concurrently",
+        "Uses the Network File System (NFS) protocol",
+        "Is a regional service (accessible across AZs)",
+        "Automatically grows and shrinks as you add/remove files",
+        "Billed on a pay-as-you-go model",
+        "Is a fully managed service"
+      ]
+    },
+    {
+      "name": "EBS",
+      "logo": "https://icon.icepanel.io/AWS/svg/Storage/Elastic-Block-Store.svg",
+      "features": [
+        "Provides block-level storage volumes",
+        "Used with Amazon EC2 instances",
+        "Can only be attached to a single EC2 instance at a time",
+        "Data persists independently of the instance's life",
+        "Lives within a single Availability Zone",
+        "Performance is measured in IOPS",
+        "Backups are done via EBS Snapshots",
+        "Is a fully managed service"
+      ]
+    },
+    {
+      "name": "Amazon FSx",
+      "logo": "https://icon.icepanel.io/AWS/svg/Storage/FSx.svg",
+      "features": [
+        "Provides fully managed third-party file systems",
+        "FSx for Windows File Server: For Windows apps (SMB)",
+        "FSx for Lustre: For High-Performance Computing (HPC)",
+        "Offers high levels of performance and scalability",
+        "Integrates with other AWS services",
+        "Is a fully managed service",
+        "Reduces operational overhead",
+        "Billed on a pay-as-you-go model"
+      ]
+    },
+    {
+      "name": "AWS Backup",
+      "logo": "https://icon.icepanel.io/AWS/svg/Storage/Backup.svg",
+      "features": [
+        "Provides a centralized backup service",
+        "Automates data protection across AWS services",
+        "Uses policy-based automation for backups",
+        "Supports services like EC2, EBS, RDS, and DynamoDB",
+        "Can create cross-region backups for disaster recovery",
+        "Is a fully managed service",
+        "Helps meet compliance requirements",
+        "Monitors backup and restore activity"
+      ]
+    },
+    {
+      "name": "Storage Gateway",
+      "logo": "https://icon.icepanel.io/AWS/svg/Storage/Storage-Gateway.svg",
+      "features": [
+        "Is a hybrid cloud storage service",
+        "Connects on-premises applications to AWS storage",
+        "Provides File, Volume, and Tape interfaces",
+        "Caches frequently accessed data on-premises",
+        "Is a fully managed service",
+        "Optimizes data transfer to and from AWS",
+        "Helps with migration and tiered storage",
+        "Supports standard storage protocols (NFS, SMB, iSCSI)"
+      ]
+    }
+  ],
+  "Compute": [
+    {
+      "name": "EC2",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2.svg",
+      "features": [
+        "Provides virtual servers, known as \"instances\"",
+        "Offers secure and resizable compute capacity",
+        "User is responsible for managing the operating system",
+        "Can be launched in multiple Availability Zones",
+        "Supports various instance types for different workloads",
+        "Can be used with Auto Scaling groups",
+        "Billed on a pay-as-you-go or reserved model",
+        "Is a foundational AWS service"
+      ]
+    },
+    {
+      "name": "AWS Lambda",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg",
+      "features": [
+        "Is a serverless compute service",
+        "Runs code in response to events (e.g., an S3 upload)",
+        "You don't manage any underlying servers",
+        "Scales automatically based on demand",
+        "Billed based on executions and duration",
+        "Has a maximum execution time of 15 minutes",
+        "Supports multiple programming languages",
+        "Is a core component of serverless architectures"
+      ]
+    },
+    {
+      "name": "ECS",
+      "logo": "https://icon.icepanel.io/AWS/svg/Containers/ECS-Anywhere.svg",
+      "features": [
+        "Is a fully managed container orchestration service",
+        "Supports Docker containers",
+        "Helps you run, stop, and manage containers on a cluster",
+        "Integrates with other AWS services like IAM and VPC",
+        "Can be run on EC2 instances (user-managed)",
+        "Can be run on AWS Fargate (serverless)",
+        "Is an AWS-proprietary service",
+        "Used for deploying microservices"
+      ]
+    },
+    {
+      "name": "EKS",
+      "logo": "https://icon.icepanel.io/AWS/svg/Containers/EKS-Anywhere.svg",
+      "features": [
+        "Is a fully managed Kubernetes service",
+        "Runs Kubernetes on AWS without you managing the control plane",
+        "Is certified Kubernetes-conformant",
+        "Used for containerized applications",
+        "Integrates with other AWS services",
+        "Can be run on EC2 instances (user-managed)",
+        "Can be run on AWS Fargate (serverless)",
+        "Ideal for teams with existing Kubernetes experience"
+      ]
+    },
+    {
+      "name": "AWS Fargate",
+      "logo": "https://icon.icepanel.io/AWS/svg/Containers/Fargate.svg",
+      "features": [
+        "Is a serverless compute engine for containers",
+        "Works with both Amazon ECS and Amazon EKS",
+        "Removes the need to provision and manage servers",
+        "You just package your application in containers",
+        "You specify the CPU and memory requirements",
+        "Handles the underlying infrastructure scaling",
+        "Billed based on vCPU and memory used",
+        "Simplifies container operations"
+      ]
+    },
+    {
+      "name": "AWS Lightsail",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/Lightsail.svg",
+      "features": [
+        "Is an easy-to-use cloud platform",
+        "Designed for simple applications and websites",
+        "Bundles a virtual machine, storage, and networking",
+        "Offers a simple, predictable monthly price",
+        "Is ideal for developers, students, and small businesses",
+        "Provides pre-configured application stacks",
+        "Includes DNS management and a static IP",
+        "Is a good starting point for learning AWS"
+      ]
+    }
+  ],
+  "Databases": [
+    {
+      "name": "Amazon Aurora",
+      "logo": "https://icon.icepanel.io/AWS/svg/Database/Aurora.svg",
+      "features": [
+        "Is a relational database engine",
+        "Is compatible with MySQL and PostgreSQL",
+        "Offers up to 5x the performance of standard MySQL",
+        "Offers up to 3x the performance of standard PostgreSQL",
+        "Storage automatically scales up to 128 TB",
+        "Is a fully managed service",
+        "Provides high availability and durability",
+        "Is a cloud-native database"
+      ]
+    },
+    {
+      "name": "RDS",
+      "logo": "https://icon.icepanel.io/AWS/svg/Database/RDS.svg",
+      "features": [
+        "Is a managed relational database service",
+        "Automates time-consuming administration tasks",
+        "Supports multiple database engines (MySQL, Oracle, etc.)",
+        "Can be deployed in multiple Availability Zones (Multi-AZ)",
+        "Supports Read Replicas to increase read scalability",
+        "Is a fully managed service",
+        "User is responsible for managing the data and schema",
+        "Provides automated backups and patching"
+      ]
+    },
+    {
+      "name": "Amazon DynamoDB",
+      "logo": "https://icon.icepanel.io/AWS/svg/Database/DynamoDB.svg",
+      "features": [
+        "Is a NoSQL key-value and document database",
+        "Delivers single-digit millisecond performance at any scale",
+        "Is a fully managed service",
+        "Is a serverless database",
+        "Scales automatically to handle workload changes",
+        "Offers both on-demand and provisioned capacity modes",
+        "Supports ACID transactions",
+        "Can be used with DynamoDB Accelerator (DAX) for caching"
+      ]
+    },
+    {
+      "name": "Amazon Redshift",
+      "logo": "https://icon.icepanel.io/AWS/svg/Analytics/Redshift.svg",
+      "features": [
+        "Is a fully managed data warehousing service",
+        "Is designed for online analytical processing (OLAP)",
+        "Uses columnar storage for fast query performance",
+        "Can analyze petabytes of data",
+        "Uses standard SQL for querying",
+        "Integrates with various Business Intelligence (BI) tools",
+        "Is a fully managed service",
+        "Can query data directly in Amazon S3 (Redshift Spectrum)"
+      ]
+    },
+    {
+      "name": "ElastiCache",
+      "logo": "https://icon.icepanel.io/AWS/svg/Database/ElastiCache.svg",
+      "features": [
+        "Is a fully managed in-memory caching service",
+        "Improves application performance by caching data",
+        "Reduces the load on backend databases",
+        "Supports two open-source engines: Redis and Memcached",
+        "Delivers microsecond latency",
+        "Is a fully managed service",
+        "Used for real-time applications like leaderboards",
+        "Scales easily to meet demand"
+      ]
+    },
+    {
+      "name": "Amazon OpenSearch",
+      "logo": "https://icon.icepanel.io/AWS/svg/Analytics/OpenSearch-Service.svg",
+      "features": [
+        "Formerly known as Elasticsearch Service",
+        "Used for search, log analytics, and monitoring",
+        "Can visualize data with OpenSearch Dashboards",
+        "Is a fully managed service",
+        "Is highly scalable",
+        "Provides real-time search capabilities",
+        "Often used for analyzing log data from other services",
+        "Is a purpose-built database"
+      ]
+    }
+  ],
+  "Networking": [
+    {
+      "name": "VPC",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Virtual-Private-Cloud.svg",
+      "features": [
+        "Provisions a logically isolated section of the AWS Cloud",
+        "Lets you define your own virtual network",
+        "You control your IP address range, subnets, and route tables",
+        "Enhances security by controlling inbound/outbound traffic",
+        "Is a foundational AWS service",
+        "Can be connected to your on-premises network",
+        "Is a regional service",
+        "Contains security groups and network ACLs"
+      ]
+    },
+    {
+      "name": "API Gateway",
+      "logo": "https://icon.icepanel.io/AWS/svg/App-Integration/API-Gateway.svg",
+      "features": [
+        "Is a fully managed service for APIs",
+        "Acts as a \"front door\" for applications",
+        "Used to create, publish, maintain, and secure APIs",
+        "Supports RESTful APIs and WebSocket APIs",
+        "Can trigger AWS Lambda functions",
+        "Handles traffic management, authorization, and monitoring",
+        "Is a serverless service",
+        "Integrates with AWS WAF for protection"
+      ]
+    },
+    {
+      "name": "Route 53",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Route-53.svg",
+      "features": [
+        "Is a scalable cloud Domain Name System (DNS) web service",
+        "Translates domain names to IP addresses",
+        "Can be used to register domain names",
+        "Offers various routing policies (e.g., Latency, Geolocation)",
+        "Can perform health checks on your resources",
+        "Is a global service",
+        "Is highly available and scalable",
+        "Integrates with other AWS services like ELB and CloudFront"
+      ]
+    },
+    {
+      "name": "CloudFront",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/CloudFront.svg",
+      "features": [
+        "Is a global content delivery network (CDN) service",
+        "Delivers content to users with low latency",
+        "Caches data at edge locations around the world",
+        "Speeds up the delivery of static and dynamic web content",
+        "Integrates with AWS Shield for DDoS protection",
+        "Can be used with S3 to serve private content",
+        "Is a global service",
+        "Improves application performance and availability"
+      ]
+    },
+    {
+      "name": "Direct Connect",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Direct-Connect.svg",
+      "features": [
+        "Establishes a dedicated private network connection to AWS",
+        "Bypasses the public internet",
+        "Provides a more consistent network experience than VPN",
+        "Can reduce network costs and increase bandwidth",
+        "Is a physical connection, requiring setup time",
+        "Used for hybrid cloud workloads",
+        "Offers speeds from 50 Mbps up to 100 Gbps",
+        "Is not a fully managed service (requires coordination)"
+      ]
+    },
+    {
+      "name": "Elastic Load Balancing",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg",
+      "features": [
+        "Automatically distributes incoming application traffic",
+        "Spreads traffic across multiple targets (e.g., EC2 instances)",
+        "Increases the fault tolerance of your applications",
+        "Has three types: Application, Network, and Gateway",
+        "Integrates with Auto Scaling to handle demand",
+        "Is a fully managed service",
+        "Can operate across multiple Availability Zones",
+        "Provides a single point of access (DNS name) for your app"
+      ]
+    }
+  ],
+  "Security": [
+    {
+      "name": "AWS WAF",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/WAF.svg",
+      "features": [
+        "Is a web application firewall",
+        "Helps protect web applications from common exploits",
+        "Operates at Layer 7 (the application layer)",
+        "Blocks attacks like SQL injection and cross-site scripting",
+        "Attaches to CloudFront, ALB, or API Gateway",
+        "Uses rules to allow or block traffic",
+        "Can use managed rule sets from AWS or vendors",
+        "Is a fully managed service"
+      ]
+    },
+    {
+      "name": "AWS Shield",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Shield.svg",
+      "features": [
+        "Is a managed DDoS protection service",
+        "Safeguards applications running on AWS",
+        "Standard tier is enabled automatically for free",
+        "Advanced tier provides enhanced protections",
+        "Protects against network and transport layer attacks",
+        "Integrates with CloudFront, Route 53, and ELB",
+        "Is a fully managed service",
+        "Advanced tier includes 24/7 access to the DDoS Response Team"
+      ]
+    },
+    {
+      "name": "AWS KMS",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Key-Management-Service.svg",
+      "features": [
+        "Stands for Key Management Service",
+        "Used to create and manage cryptographic keys",
+        "Controls the use of encryption across AWS services",
+        "Is a secure and resilient service using FIPS 140-2 validated hardware",
+        "Integrates with many AWS services for server-side encryption",
+        "Provides centralized control over keys",
+        "Is a regional service",
+        "Is a fully managed service"
+      ]
+    },
+    {
+      "name": "Secrets Manager",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Secrets-Manager.svg",
+      "features": [
+        "Used to manage, retrieve, and rotate secrets",
+        "Protects secrets like database credentials and API keys",
+        "Helps you replace hardcoded credentials in your code",
+        "Can automatically rotate secrets on a schedule",
+        "Integrates with RDS, Redshift, and DocumentDB",
+        "Is a fully managed service",
+        "Encrypts secrets at rest using AWS KMS",
+        "Provides fine-grained access control using IAM"
+      ]
+    }
+  ],
+  "Management & Governance": [
+    {
+      "name": "CloudFormation",
+      "logo": "https://icon.icepanel.io/AWS/svg/Management-Governance/CloudFormation.svg",
+      "features": [
+        "Is an Infrastructure as Code (IaC) service",
+        "Lets you model and provision AWS resources",
+        "Uses templates written in YAML or JSON",
+        "Provides a single source of truth for your infrastructure",
+        "Automates the process of setting up resources",
+        "Is a fully managed service",
+        "Helps ensure consistent and repeatable deployments",
+        "Reduces the risk of manual error"
+      ]
+    },
+    {
+      "name": "Systems Manager",
+      "logo": "https://icon.icepanel.io/AWS/svg/Management-Governance/Systems-Manager.svg",
+      "features": [
+        "Provides a unified user interface for operational tasks",
+        "Gives you visibility and control of your infrastructure",
+        "Can be used to automate patching and software installation",
+        "Session Manager provides secure instance access",
+        "Parameter Store securely stores configuration data",
+        "Is a fully managed service",
+        "Works for EC2 instances and on-premises servers",
+        "Helps you maintain security and compliance"
+      ]
+    }
+  ]
+}
