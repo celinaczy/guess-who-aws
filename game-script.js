@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 populateBoard(gameCards);
 
-                // Select a mystery card using the seeded random function
+                // Select a mystery card using the standard math random function
                 const mysteryCardIndex = Math.floor(Math.random() * gameCards.length);
                 const mysteryCard = gameCards[mysteryCardIndex];
                 selectMysteryCard(mysteryCard);
