@@ -34,8 +34,8 @@ body {
 /* Individual Game Card Styles */
 .game-card {
     background-color: #fff;
-    border: 5px solid #f9d71c; /* Yellow border */
-    border-radius: 10px;
+    border: 15px solid #f9d71c; /* Yellow border */
+    border-radius: 15px;
     cursor: pointer;
     perspective: 1000px; /* For 3D flip effect */
     min-height: 150px;
@@ -110,3 +110,14 @@ body {
     font-size: 3rem;
     color: #c23d39;
 }
+
+/* AWS Category Colors - Now with the full border property */
+.card-storage { border: 4px solid #2E73B8; } /* Blue */
+.card-compute { border: 4px solid #FF9900; } /* Orange */
+.card-database { border: 4px solid #2E73B8; } /* Blue */
+.card-networking { border: 4px solid #8C4FFF; } /* Purple */
+.card-security { border: 4px solid #D81534; } /* Red */
+.card-management { border: 4px solid #FFC300; } /* Yellow */
+.card-integration { border: 4px solid #399F84; } /* Teal */
+.card-migration { border: 4px solid #C4508A; } /* Magenta */
+

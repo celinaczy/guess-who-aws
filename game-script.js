@@ -3,15 +3,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const mysteryCardElement = document.getElementById('mystery-card');
     let allCards = [];
 
+    // This map links the category name from cards.json to a CSS class in game-style.css
+    const categoryColors = {
+        "Storage": "card-storage",
+        "Compute": "card-compute",
+        "Databases": "card-database",
+        "Networking": "card-networking",
+        "Security": "card-security",
+        "Management & Governance": "card-management",
+        "Application Integration": "card-integration",
+        "Migration & Transfer": "card-migration"
+        // Add other categories here if you expand cards.json
+    };
+
     // Fetch the JSON data
     fetch('cards.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
-            // Flatten the data into a single array of cards
+            // Flatten the data into a single array of cards, adding the category to each card object
             for (const category in data) {
-                data[category].forEach(card => {
-                    allCards.push({ ...card, category: category });
-                });
+                if (data.hasOwnProperty(category)) {
+                    data[category].forEach(card => {
+                        allCards.push({ ...card, category: category });
+                    });
+                }
             }
 
             // Shuffle the cards for a random layout each time
@@ -35,7 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
         gameBoard.innerHTML = ''; // Clear the board first
         cards.forEach(cardData => {
             const cardElement = document.createElement('div');
-            cardElement.className = 'game-card';
+
+            // **THE FIX IS HERE:**
+            // Get the color class from our map based on the card's category.
+            const colorClass = categoryColors[cardData.category] || '';
+            // Assign BOTH the base 'game-card' class and the specific color class.
+            cardElement.className = `game-card ${colorClass}`;
 
             cardElement.innerHTML = `
                 <div class="card-body">
@@ -65,6 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add a click event to reveal the mystery card
         mysteryCardElement.addEventListener('click', () => {
             mysteryCardElement.classList.add('revealed');
+            const colorClass = categoryColors[mysteryCard.category] || '';
+            mysteryCardElement.className = `game-card ${colorClass}`; // Also color the mystery card when revealed
+
             mysteryCardBody.innerHTML = `
                 <img src="${mysteryCard.logo}" alt="${mysteryCard.name} Logo" class="card-logo" onerror="this.style.display='none'">
                 <h3 class="card-title">${mysteryCard.name}</h3>
