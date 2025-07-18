@@ -15,37 +15,53 @@ body {
     font-size: 1.75rem;
 }
 
+/* Game Setup Styles */
+.game-setup {
+    background-color: #3d4a5c;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+.game-setup .form-control {
+    text-align: center;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
 /* Game Board Styles */
 .game-board {
     display: grid;
-    /* Responsive grid for smaller screens */
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 15px;
     padding: 20px;
-    background-color: #3d4a5c; /* A slightly lighter shade for the board */
+    background-color: #3d4a5c;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    max-width: 1400px; /* Constrain the max width for a cleaner look */
+    max-width: 1400px;
     margin: 0 auto;
 }
 
-/* On larger screens, enforce a 6x4 grid */
 @media (min-width: 1200px) {
     .game-board {
         grid-template-columns: repeat(6, 1fr);
     }
 }
 
-
 /* Individual Game Card Styles */
 .game-card {
     background-color: #fff;
     border-radius: 10px;
     cursor: pointer;
-    perspective: 1000px; /* For 3D flip effect */
+    perspective: 1000px;
     min-height: 150px;
     transition: opacity 0.4s, transform 0.2s;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
 }
 
 .game-card:hover {
@@ -70,7 +86,7 @@ body {
     width: 48px;
     height: 48px;
     margin-bottom: 10px;
-    border-radius: 8px; /* Rounded corners for logos */
+    border-radius: 8px;
 }
 
 .game-card .card-title {
@@ -92,13 +108,13 @@ body {
     right: 8px;
     width: 24px;
     height: 24px;
-    background-color: #FF9900; /* AWS Orange */
-    color: #232f3e; /* Dark text */
+    background-color: #FF9900;
+    color: #232f3e;
     border: 1px solid #fff;
     border-radius: 50%;
     font-size: 14px;
     font-weight: bold;
-    line-height: 22px; /* Adjusted for vertical centering */
+    line-height: 22px;
     text-align: center;
     padding: 0;
     cursor: pointer;
@@ -107,7 +123,7 @@ body {
 }
 
 .info-btn:hover {
-    background-color: #e68a00; /* Darker orange on hover */
+    background-color: #e68a00;
 }
 
 /* Mystery Card Styles */
@@ -118,7 +134,7 @@ body {
 .mystery-card-container {
     display: inline-block;
     padding: 10px;
-    background-color: #FF9900; /* AWS Orange to highlight */
+    background-color: #FF9900;
     border-radius: 10px;
 }
 
@@ -143,15 +159,15 @@ body {
 
 /* Modal Styling */
 .modal-content {
-    background-color: #fff; /* Lighter board color */
-    color: black;
+    background-color: #3d4a5c;
+    color: #fff;
     border-radius: 10px;
     border: 2px solid #FF9900;
 }
 
 .modal-header {
-    background-color: #232f3e; /* Darkest background */
-    color: #FF9900; /* Orange title */
+    background-color: #232f3e;
+    color: #FF9900;
     border-bottom: 1px solid #545b64;
 }
 

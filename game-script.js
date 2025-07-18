@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const gameSetup = document.getElementById('game-setup');
+    const gameContent = document.getElementById('game-content');
+    const startGameBtn = document.getElementById('start-game-btn');
+    const seedInput = document.getElementById('seed-input');
     const gameBoard = document.getElementById('game-board');
     const mysteryCardElement = document.getElementById('mystery-card');
+
     let allCards = [];
 
     // This map links the category name from cards.json to a CSS class in game-style.css
@@ -16,40 +21,88 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add other categories here if you expand cards.json
     };
 
-    // Fetch the JSON data
-    fetch('cards.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Flatten the data into a single array of cards, adding the category to each card object
-            for (const category in data) {
-                if (data.hasOwnProperty(category)) {
-                    data[category].forEach(card => {
-                        allCards.push({ ...card, category: category });
-                    });
+    // --- Seeded Random Number Generator ---
+    function createSeededRandom(seed) {
+        let state = seed;
+        return function() {
+            state = (state * 9301 + 49297) % 233280;
+            return state / 233280;
+        };
+    }
+
+    // --- Helper function to convert any string to a numeric seed ---
+    function stringToSeed(str) {
+        let hash = 0;
+        if (str.length === 0) {
+            // Return a random number if the string is empty
+            return Math.floor(Math.random() * 100000);
+        }
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash |= 0; // Convert to 32bit integer
+        }
+        return Math.abs(hash);
+    }
+
+    // --- Start Game Event Listener ---
+    startGameBtn.addEventListener('click', () => {
+        let seedValue = seedInput.value.trim();
+        let seed;
+
+        // If the input is empty, create a random seed and display it
+        if (seedValue === '') {
+            // Generate a random, shareable string
+            seedValue = (Math.random() + 1).toString(36).substring(2);
+            seedInput.value = seedValue;
+        }
+
+        // Convert the text value (new or user-provided) into a numeric seed
+        seed = stringToSeed(seedValue);
+
+        // Hide the setup screen and show the game
+        gameSetup.classList.add('hidden');
+        gameContent.classList.remove('hidden');
+
+        // Initialize the game with the chosen seed
+        initializeGame(seed);
+    });
+
+    function initializeGame(seed) {
+        const seededRandom = createSeededRandom(seed);
+
+        fetch('cards.json')
+            .then(response => response.json())
+            .then(data => {
+                allCards = []; // Reset cards array
+                for (const category in data) {
+                    if (data.hasOwnProperty(category)) {
+                        data[category].forEach(card => {
+                            allCards.push({ ...card, category: category });
+                        });
+                    }
                 }
-            }
 
-            // Shuffle the cards for a random layout each time
-            allCards.sort(() => 0.5 - Math.random());
+                // Shuffle the cards using the seeded random function for a predictable order
+                allCards.sort(() => 0.5 - seededRandom());
 
-            // Limit the number of cards to 24 for the game board
-            const gameCards = allCards.slice(0, 24);
+                const gameCards = allCards.slice(0, 24);
 
-            // Populate the game board with the 24 cards
-            populateBoard(gameCards);
+                // Also shuffle the game cards themselves for board layout
+                gameCards.sort(() => 0.5 - seededRandom());
 
-            // Select a mystery card from the same set of 24
-            selectMysteryCard(gameCards);
-        })
-        .catch(error => {
-            console.error("Error loading card data:", error);
-            gameBoard.innerHTML = "<p class='text-white'>Could not load the game. Please try again.</p>";
-        });
+                populateBoard(gameCards);
+
+                // Select a mystery card using the seeded random function
+                const mysteryCardIndex = Math.floor(seededRandom() * gameCards.length);
+                const mysteryCard = gameCards[mysteryCardIndex];
+                selectMysteryCard(mysteryCard);
+            })
+            .catch(error => {
+                console.error("Error loading card data:", error);
+                gameBoard.innerHTML = "<p class='text-white'>Could not load the game. Please try again.</p>";
+            });
+    }
 
     function populateBoard(cards) {
         gameBoard.innerHTML = ''; // Clear the board first
@@ -98,10 +151,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function selectMysteryCard(cards) {
-        // Select a random card from the array
-        const mysteryCard = cards[Math.floor(Math.random() * cards.length)];
+    function selectMysteryCard(mysteryCard) {
         const mysteryCardBody = mysteryCardElement.querySelector('.card-body');
+        mysteryCardBody.innerHTML = '<h3 class="card-title-mystery">?</h3>';
 
         // Initially, the card shows a question mark
         mysteryCardBody.innerHTML = '<h3 class="card-title">?</h3>';

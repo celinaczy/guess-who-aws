@@ -17,21 +17,35 @@
             <a href="index.html" class="btn btn-outline-light btn-sm">Back to Study Guide</a>
         </div>
 
-        <!-- Mystery Card Section -->
-        <div class="mystery-card-section text-center mb-4">
-            <h2 class="section-title">Your Mystery Service</h2>
-            <div class="mystery-card-container">
-                <div id="mystery-card" class="card game-card">
-                    <div class="card-body">
-                        <h3 class="card-title-mystery">?</h3>
+        <!-- Game Setup Section -->
+        <div id="game-setup" class="game-setup text-center">
+            <h2 class="section-title mb-3">Game Setup</h2>
+            <p class="text-white-50">To play with friends, use the same Game ID - just agree on the same word, phrase or number.</p>
+            <div class="mb-3">
+                <label for="seed-input" class="form-label visually-hidden">Game ID</label>
+                <input type="text" class="form-control" id="seed-input" placeholder="I love AWS <3">
+            </div>
+            <button id="start-game-btn" class="btn btn-warning btn-lg">Start Game</button>
+        </div>
+
+        <!-- Main Game Content (Initially Hidden) -->
+        <div id="game-content" class="hidden">
+            <!-- Mystery Card Section -->
+            <div class="mystery-card-section text-center mb-4">
+                <h2 class="section-title">Your Mystery Service</h2>
+                <div class="mystery-card-container">
+                    <div id="mystery-card" class="card game-card">
+                        <div class="card-body">
+                            <h3 class="card-title-mystery">?</h3>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Game Board Section -->
-        <div id="game-board" class="game-board">
-            <!-- Cards will be dynamically inserted here by JavaScript -->
+            <!-- Game Board Section -->
+            <div id="game-board" class="game-board">
+                <!-- Cards will be dynamically inserted here by JavaScript -->
+            </div>
         </div>
     </div>
 
