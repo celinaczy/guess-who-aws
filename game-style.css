@@ -16,7 +16,7 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 15px;
     padding: 20px;
-    background-color: #3484c2; /* Classic game blue */
+    background-color: #232f3e; /* AWS Dark Blue/Grey */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     max-width: 1400px; /* Constrain the max width for a cleaner look */
@@ -39,11 +39,17 @@ body {
     cursor: pointer;
     perspective: 1000px; /* For 3D flip effect */
     min-height: 150px;
-    transition: opacity 0.4s;
+    transition: opacity 0.4s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
 }
 
 .game-card.flipped {
-    opacity: 0.4;
+    opacity: 0.3;
+    transform: scale(0.95);
 }
 
 .game-card .card-body {
@@ -55,16 +61,23 @@ body {
     align-items: center;
 }
 
+.card-logo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+    border-radius: 8px; /* Rounded corners for logos */
+}
+
 .game-card .card-title {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #333;
+    color: #232f3e;
     margin: 0;
 }
 
 .game-card .card-subtitle {
     font-size: 0.8rem;
-    color: #666;
+    color: #545b64;
 }
 
 /* Mystery Card Styles */
@@ -86,6 +99,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 3px solid #fff;
 }
 
 #mystery-card.revealed .card-title {

@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             cardElement.innerHTML = `
                 <div class="card-body">
+                    <img src="${cardData.logo}" alt="${cardData.name} Logo" class="card-logo" onerror="this.style.display='none'">
                     <h3 class="card-title">${cardData.name}</h3>
                     <h4 class="card-subtitle text-muted"><b>${cardData.category}</b></h4>
                 </div>
@@ -65,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mysteryCardElement.addEventListener('click', () => {
             mysteryCardElement.classList.add('revealed');
             mysteryCardBody.innerHTML = `
+                <img src="${mysteryCard.logo}" alt="${mysteryCard.name} Logo" class="card-logo" onerror="this.style.display='none'">
                 <h3 class="card-title">${mysteryCard.name}</h3>
                 <h4 class="card-subtitle text-muted"><b>${mysteryCard.category}</b></h4>
             `;
