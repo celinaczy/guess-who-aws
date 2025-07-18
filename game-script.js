@@ -162,13 +162,32 @@ document.addEventListener('DOMContentLoaded', function() {
         mysteryCardElement.addEventListener('click', () => {
             mysteryCardElement.classList.add('revealed');
             const colorClass = categoryColors[mysteryCard.category] || '';
-            mysteryCardElement.className = `game-card ${colorClass}`; // Also color the mystery card when revealed
+            mysteryCardElement.className = `game-card ${colorClass}`;
 
             mysteryCardBody.innerHTML = `
+                <button class="info-btn">i</button>
                 <img src="${mysteryCard.logo}" alt="${mysteryCard.name} Logo" class="card-logo" onerror="this.style.display='none'">
                 <h3 class="card-title">${mysteryCard.name}</h3>
                 <h4 class="card-subtitle text-muted"><b>${mysteryCard.category}</b></h4>
             `;
-        }, { once: true }); // The event listener will only run once
+
+            // **FIX:** Add a new event listener to the info button that was just created.
+            const infoBtn = mysteryCardBody.querySelector('.info-btn');
+            infoBtn.addEventListener('click', (event) => {
+                event.stopPropagation(); // Prevent any other click events
+
+                // Populate and show the modal with the mystery card's data
+                const modalTitle = document.getElementById('infoModalLabel');
+                const modalBody = document.querySelector('#infoModal .modal-body');
+                const infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
+
+                modalTitle.textContent = mysteryCard.name;
+                let featuresList = mysteryCard.features.map(feature => `<li>${feature}</li>`).join('');
+                modalBody.innerHTML = `<ul>${featuresList}</ul>`;
+
+                infoModal.show();
+            });
+
+        }, { once: true }); // The event listener will only run once to reveal the card
     }
 });

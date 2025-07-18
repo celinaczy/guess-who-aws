@@ -159,8 +159,8 @@ body {
 
 /* Modal Styling */
 .modal-content {
-    background-color: #3d4a5c;
-    color: #fff;
+    background-color: white;
+    color: black;
     border-radius: 10px;
     border: 2px solid #FF9900;
 }
