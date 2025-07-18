@@ -1,18 +1,27 @@
 body {
-    background-color: #f8f9fa;
+    background-color: #232f3e; /* AWS Dark Blue/Grey */
+    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1, .lead {
+    color: #fff;
 }
 
 .category-title {
     margin-top: 2.5rem;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid #dee2e6;
+    border-bottom: 2px solid #545b64;
     padding-bottom: 0.5rem;
+    color: #FF9900; /* AWS Orange */
 }
 
 .card {
     height: 100%;
     transition: transform 0.2s, box-shadow 0.2s;
-    border: none;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .card:hover {
@@ -23,33 +32,51 @@ body {
 .card-body {
     display: flex;
     flex-direction: column;
+    padding: 1.5rem;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 8px;
 }
 
 .card-title {
-    font-size: 1.75rem;
-    font-weight: 300;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #232f3e;
+    margin-bottom: 0.25rem;
 }
 
 .card-subtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    color: #545b64;
 }
 
 .card-text ul {
     padding-left: 1.2rem;
     margin-bottom: 0;
     flex-grow: 1;
+    color: #343a40;
 }
 
 .card-text li {
     padding-bottom: 0.5rem;
 }
 
-/* Category Card Colors */
-.card.card-storage { background-color: #e7f3ff; } /* Light Blue */
-.card.card-compute { background-color: #e6f9f0; } /* Light Green */
-.card.card-database { background-color: #f3e8ff; } /* Light Purple */
-.card.card-networking { background-color: #fff4e6; } /* Light Orange */
-.card.card-integration { background-color: #e0fbf6; } /* Light Teal */
-.card.card-migration { background-color: #fde7f3; } /* Light Pink */
-.card.card-security { background-color: #feeeee; } /* Light Red */
-.card.card-management { background-color: #f8f9fa; border: 1px solid #dee2e6;} /* Light Grey */
+/* AWS Category Colors */
+.card-storage { border: 4px solid #2E73B8; } /* Blue */
+.card-compute { border: 4px solid #FF9900; } /* Orange */
+.card-database { border: 4px solid #2E73B8; } /* Blue */
+.card-networking { border: 4px solid #8C4FFF; } /* Purple */
+.card-security { border: 4px solid #D81534; } /* Red */
+.card-management { border: 4px solid #FFC300; } /* Yellow */
+.card-integration { border: 4px solid #399F84; } /* Teal */
+.card-migration { border: 4px solid #C4508A; } /* Magenta */
