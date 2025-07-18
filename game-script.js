@@ -55,14 +55,13 @@ document.addEventListener('DOMContentLoaded', function() {
         gameBoard.innerHTML = ''; // Clear the board first
         cards.forEach(cardData => {
             const cardElement = document.createElement('div');
-
-            // **THE FIX IS HERE:**
             // Get the color class from our map based on the card's category.
             const colorClass = categoryColors[cardData.category] || '';
             // Assign BOTH the base 'game-card' class and the specific color class.
             cardElement.className = `game-card ${colorClass}`;
 
             cardElement.innerHTML = `
+                <button class="info-btn">i</button>
                 <div class="card-body">
                     <img src="${cardData.logo}" alt="${cardData.name} Logo" class="card-logo" onerror="this.style.display='none'">
                     <h3 class="card-title">${cardData.name}</h3>
@@ -70,9 +69,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
 
-            // Add click event listener to flip the card
-            cardElement.addEventListener('click', () => {
-                cardElement.classList.toggle('flipped');
+            // Add click event listener to FLIP the card
+            cardElement.addEventListener('click', (event) => {
+                // Only flip if the info button wasn't the click target
+                if (!event.target.classList.contains('info-btn')) {
+                     cardElement.classList.toggle('flipped');
+                }
+            });
+
+            // Add click event listener for the INFO button
+            const infoBtn = cardElement.querySelector('.info-btn');
+            infoBtn.addEventListener('click', (event) => {
+                event.stopPropagation(); // This is crucial to prevent the card from flipping
+
+                // Populate and show the modal with this card's data
+                const modalTitle = document.getElementById('infoModalLabel');
+                const modalBody = document.querySelector('#infoModal .modal-body');
+                const infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
+
+                modalTitle.textContent = cardData.name;
+                let featuresList = cardData.features.map(feature => `<li>${feature}</li>`).join('');
+                modalBody.innerHTML = `<ul>${featuresList}</ul>`;
+
+                infoModal.show();
             });
 
             gameBoard.appendChild(cardElement);
