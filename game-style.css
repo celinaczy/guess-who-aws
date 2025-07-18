@@ -1,0 +1,87 @@
+body {
+    background-color: #f0f2f5;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.game-title {
+    color: #c23d39; /* Classic game red */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Game Board Styles */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background-color: #3484c2; /* Classic game blue */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Individual Game Card Styles */
+.game-card {
+    background-color: #fff;
+    border: 5px solid #f9d71c; /* Yellow border */
+    border-radius: 10px;
+    cursor: pointer;
+    perspective: 1000px; /* For 3D flip effect */
+    min-height: 150px;
+    transition: opacity 0.4s;
+}
+
+.game-card.flipped {
+    opacity: 0.4;
+}
+
+.game-card .card-body {
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-card .card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.game-card .card-subtitle {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Mystery Card Styles */
+.mystery-card-section {
+    padding: 10px;
+}
+
+.mystery-card-container {
+    display: inline-block;
+    padding: 10px;
+    background-color: #c23d39;
+    border-radius: 10px;
+}
+
+#mystery-card {
+    cursor: default;
+    min-width: 200px;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mystery-card.revealed .card-title {
+    font-size: 1.5rem;
+}
+
+#mystery-card .card-title {
+    font-size: 3rem;
+    color: #c23d39;
+}
