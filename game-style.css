@@ -12,13 +12,24 @@ body {
 /* Game Board Styles */
 .game-board {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    /* Responsive grid for smaller screens */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 15px;
     padding: 20px;
     background-color: #3484c2; /* Classic game blue */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-width: 1400px; /* Constrain the max width for a cleaner look */
+    margin: 0 auto;
 }
+
+/* On larger screens, enforce a 6x4 grid */
+@media (min-width: 1200px) {
+    .game-board {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
 
 /* Individual Game Card Styles */
 .game-card {

@@ -17,11 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // Shuffle the cards for a random layout each time
             allCards.sort(() => 0.5 - Math.random());
 
-            // Populate the game board
-            populateBoard(allCards);
+            // Limit the number of cards to 24 for the game board
+            const gameCards = allCards.slice(0, 24);
 
-            // Select a mystery card
-            selectMysteryCard(allCards);
+            // Populate the game board with the 24 cards
+            populateBoard(gameCards);
+
+            // Select a mystery card from the same set of 24
+            selectMysteryCard(gameCards);
         })
         .catch(error => {
             console.error("Error loading card data:", error);
