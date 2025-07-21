@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeGame(seed) {
         const seededRandom = createSeededRandom(seed);
 
-        fetch('cards.json')
+        fetch('new-cards.json')
             .then(response => response.json())
             .then(data => {
                 allCards = []; // Reset cards array
