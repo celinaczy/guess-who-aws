@@ -154,119 +154,50 @@
       ]
     }
   ],
-  "LoadBalancers": [
+  "Compute": [
     {
-      "name": "Application Load Balancer (ALB)",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg",
+      "name": "EC2 Auto Scaling Group",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2-Auto-Scaling.svg",
       "features": [
-        "Operates at Layer 7 (Application Layer) for HTTP/HTTPS traffic.",
-        "Default choice for modern web applications and microservices.",
-        "Supports content-aware routing based on path or hostname.",
-        "Ideal for container-based architectures like ECS and EKS.",
-        "Can route traffic to serverless Lambda functions.",
-        "Supports WebSockets."
+        "Automatically adjusts the number of EC2 instances based on demand.",
+        "Maintains application availability and ensures desired capacity.",
+        "Can scale based on metrics (e.g., CPU utilization), a schedule, or predictively.",
+        "Works with Elastic Load Balancing to distribute traffic to a healthy fleet of instances.",
+        "A core component for creating elastic and fault-tolerant architectures.",
+        "Exam Keywords: 'elasticity', 'scalability', 'high availability', 'handle load'."
       ]
     },
     {
-      "name": "Network Load Balancer (NLB)",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg",
+      "name": "Cluster Placement Group",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2.svg",
       "features": [
-        "Operates at Layer 4 (Transport Layer) for TCP/UDP/TLS traffic.",
-        "Built for extreme performance and ultra-low latency.",
-        "Can be assigned a static or Elastic IP address.",
-        "Preserves the client's source IP address.",
-        "Ideal for gaming, IoT, and high-performance computing.",
-        "Use when you need to handle millions of requests per second."
+        "Packs instances close together inside a single Availability Zone.",
+        "Provides the lowest inter-instance latency.",
+        "Ideal for tightly-coupled High-Performance Computing (HPC) applications.",
+        "Increases risk of simultaneous failure if the underlying hardware fails.",
+        "Exam Keywords: 'low latency', 'HPC', 'tightly-coupled'."
       ]
     },
     {
-      "name": "Gateway Load Balancer (GWLB)",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg",
+      "name": "Partition Placement Group",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2.svg",
       "features": [
-        "Operates at Layer 3 (Network) & Layer 4 (Transport).",
-        "Used to deploy, scale, and manage third-party virtual appliances.",
-        "Enables transparent inline traffic inspection for security.",
-        "Use case: Deploying firewalls, IDS/IPS, and deep packet inspection systems.",
-        "Centralizes security appliances for your VPCs."
+        "Spreads instances across logical partitions (separate hardware racks).",
+        "Reduces the likelihood of correlated hardware failures.",
+        "Each partition is isolated from the others.",
+        "Ideal for large distributed workloads like Hadoop, Cassandra, and Kafka.",
+        "Exam Keywords: 'distributed', 'replicated', 'fault tolerance', 'Hadoop/Cassandra'."
       ]
     },
     {
-      "name": "Classic Load Balancer (CLB)",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg",
+      "name": "Spread Placement Group",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2.svg",
       "features": [
-        "Operates at both Layer 4 (TCP) and Layer 7 (HTTP/HTTPS).",
-        "This is a legacy service and is not recommended for new applications.",
-        "Lacks the advanced routing features of an ALB.",
-        "Primarily for applications built within the EC2-Classic network.",
-        "NOTE: This is almost always the INCORRECT answer for new architectures."
-      ]
-    }
-  ],
-    "SecurityAndMonitoring": [
-    {
-      "name": "Amazon GuardDuty",
-      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/GuardDuty.svg",
-      "features": [
-        "A managed threat detection service.",
-        "Continuously monitors for malicious activity and unauthorized behavior.",
-        "Analyzes CloudTrail logs, VPC Flow Logs, and DNS logs.",
-        "Use case: Detecting compromised EC2 instances or suspicious API calls.",
-        "Answers the question: 'Am I being attacked right now?'"
-      ]
-    },
-    {
-      "name": "Amazon Inspector",
-      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Inspector.svg",
-      "features": [
-        "An automated vulnerability management service.",
-        "Scans EC2 instances and container images for vulnerabilities.",
-        "Checks for unintended network exposure and software flaws (CVEs).",
-        "It is a proactive service to find weaknesses before they are exploited.",
-        "Answers the question: 'Where are my systems vulnerable?'"
-      ]
-    },
-    {
-      "name": "Amazon Macie",
-      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Macie.svg",
-      "features": [
-        "A fully managed data security and data privacy service.",
-        "Uses machine learning to discover and protect sensitive data in Amazon S3.",
-        "Identifies data like Personally Identifiable Information (PII) and financial data.",
-        "Monitors S3 buckets for security risks like public access.",
-        "Answers the question: 'Where is my sensitive data in S3 and is it secure?'"
-      ]
-    },
-    {
-      "name": "Amazon Cognito",
-      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Cognito.svg",
-      "features": [
-        "Provides identity management for your applications.",
-        "Handles user sign-up, sign-in, and access control.",
-        "Supports social identity providers like Google, Facebook, and Apple.",
-        "Manages user pools (directories) and identity pools (for AWS credentials).",
-        "Answers the question: 'How do users sign in and get access to my app?'"
-      ]
-    },
-    {
-      "name": "Amazon CloudWatch",
-      "logo": "https://icon.icepanel.io/AWS/svg/Management-Governance/CloudWatch.svg",
-      "features": [
-        "The central monitoring and observability service for AWS.",
-        "Collects metrics, logs, and events from AWS resources and applications.",
-        "Can visualize data in dashboards and create alarms based on thresholds.",
-        "Use case: Monitoring EC2 CPU utilization or application error logs.",
-        "Answers the question: 'What is the health and performance of my resources?'"
-      ]
-    },
-    {
-      "name": "AWS CloudTrail",
-      "logo": "https://icon.icepanel.io/AWS/svg/Management-Governance/CloudTrail.svg",
-      "features": [
-        "Provides an audit log of all actions taken in your AWS account.",
-        "Records every API call, whether from the console, SDK, or CLI.",
-        "Used for governance, compliance, and operational auditing.",
-        "A critical data source for security analysis and troubleshooting.",
-        "Answers the question: 'Who did what, and when?'"
+        "Ensures each instance is on distinct underlying hardware.",
+        "Provides the maximum protection against simultaneous failures.",
+        "Used for a small number of critical instances that must be kept separate.",
+        "Ideal for applications like domain controllers or critical databases.",
+        "Exam Keywords: 'critical instances', 'maximum availability', 'separate hardware'."
       ]
     }
   ],
@@ -405,6 +336,52 @@
   ],
   "Networking": [
     {
+      "name": "Application Load Balancer (ALB)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg",
+      "features": [
+        "Operates at Layer 7 (Application Layer) for HTTP/HTTPS traffic.",
+        "Default choice for modern web applications and microservices.",
+        "Supports content-aware routing based on path or hostname.",
+        "Ideal for container-based architectures like ECS and EKS.",
+        "Can route traffic to serverless Lambda functions.",
+        "Supports WebSockets."
+      ]
+    },
+    {
+      "name": "Network Load Balancer (NLB)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg",
+      "features": [
+        "Operates at Layer 4 (Transport Layer) for TCP/UDP/TLS traffic.",
+        "Built for extreme performance and ultra-low latency.",
+        "Can be assigned a static or Elastic IP address.",
+        "Preserves the client's source IP address.",
+        "Ideal for gaming, IoT, and high-performance computing.",
+        "Use when you need to handle millions of requests per second."
+      ]
+    },
+    {
+      "name": "Gateway Load Balancer (GWLB)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg",
+      "features": [
+        "Operates at Layer 3 (Network) & Layer 4 (Transport).",
+        "Used to deploy, scale, and manage third-party virtual appliances.",
+        "Enables transparent inline traffic inspection for security.",
+        "Use case: Deploying firewalls, IDS/IPS, and deep packet inspection systems.",
+        "Centralizes security appliances for your VPCs."
+      ]
+    },
+    {
+      "name": "Classic Load Balancer (CLB)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg",
+      "features": [
+        "Operates at both Layer 4 (TCP) and Layer 7 (HTTP/HTTPS).",
+        "This is a legacy service and is not recommended for new applications.",
+        "Lacks the advanced routing features of an ALB.",
+        "Primarily for applications built within the EC2-Classic network.",
+        "NOTE: This is almost always the INCORRECT answer for new architectures."
+      ]
+    },
+    {
       "name": "AWS Direct Connect",
       "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Direct-Connect.svg",
       "features": [
@@ -436,9 +413,157 @@
         "Operates over the public internet, so performance is not guaranteed.",
         "Exam Keywords: 'hub-and-spoke', 'site-to-site communication', 'branch offices'."
       ]
+    },
+    {
+      "name": "Elastic Network Adapter (ENA)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "features": [
+        "The standard, modern networking interface for most EC2 instances.",
+        "Provides high throughput (up to 100 Gbps) and reliable, low latency.",
+        "Enables 'Enhanced Networking' on supported instance types.",
+        "A great general-purpose network adapter for most workloads.",
+        "Exam Keywords: 'enhanced networking', 'high throughput'."
+      ]
+    },
+    {
+      "name": "Elastic Fabric Adapter (EFA)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "features": [
+        "A specialized network interface for HPC and machine learning.",
+        "Provides an OS-bypass capability for extremely low and consistent latency.",
+        "Allows HPC applications to communicate directly with the network hardware.",
+        "Must be used with a Cluster Placement Group for best performance.",
+        "An AWS alternative to NIC Teaming",
+        "Exam Keywords: 'HPC', 'machine learning', 'OS-bypass', 'extremely low latency'."
+      ]
+    },
+    {
+      "name": "Route 53 - Failover Routing",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Route-53.svg",
+      "features": [
+        "A routing policy used for active/passive disaster recovery.",
+        "You configure a primary resource and a secondary (standby) resource.",
+        "Route 53 monitors the health of the primary resource.",
+        "If the primary fails, traffic is automatically rerouted to the secondary.",
+        "Exam Keywords: 'active/passive', 'disaster recovery', 'primary/secondary'."
+      ]
+    },
+    {
+      "name": "Route 53 - Weighted Routing",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Route-53.svg",
+      "features": [
+        "A routing policy that splits traffic between multiple resources based on percentages.",
+        "You assign a 'weight' to each record (e.g., 90% to A, 10% to B).",
+        "Used for active/active load balancing, canary testing, or blue/green deployments.",
+        "It is not used for a simple active/passive failover configuration.",
+        "Exam Keywords: 'split traffic', 'canary testing', 'blue/green', 'A/B testing'."
+      ]
+    },
+    {
+      "name": "Route 53 - Alias Record",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Route-53.svg",
+      "features": [
+        "An AWS-specific record type that points to AWS resources (like ELB, CloudFront).",
+        "Can be used at the Zone Apex (e.g., example.com).",
+        "Queries are free and it automatically updates if the resource's IP changes.",
+        "The best practice for connecting domains to AWS resources.",
+        "Enables the 'Evaluate Target Health' feature."
+      ]
+    },
+    {
+      "name": "Route 53 - CNAME Record",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Route-53.svg",
+      "features": [
+        "A standard DNS record that maps one domain name to another.",
+        "Cannot be used at the Zone Apex (e.g., example.com).",
+        "Less efficient than an Alias record as it requires an extra DNS lookup.",
+        "Should be avoided in favor of Alias records when pointing to AWS resources.",
+        "Does not support 'Evaluate Target Health'."
+      ]
+    },
+    {
+      "name": "Route 53 - Evaluate Target Health",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Route-53.svg",
+      "features": [
+        "A setting for Alias records that integrates with Route 53 health checks.",
+        "When 'Yes', Route 53 considers the health of the backend resources (e.g., EC2 instances).",
+        "If the ELB is up but all its instances are down, Route 53 will see the target as unhealthy.",
+        "This is critical for enabling accurate and automatic failover.",
+        "Best practice is to set this to 'Yes' for failover configurations."
+      ]
     }
   ],
-  "Migration-Transfer": [
+  "Security": [
+    {
+      "name": "Amazon GuardDuty",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/GuardDuty.svg",
+      "features": [
+        "A managed threat detection service.",
+        "Continuously monitors for malicious activity and unauthorized behavior.",
+        "Analyzes CloudTrail logs, VPC Flow Logs, and DNS logs.",
+        "Use case: Detecting compromised EC2 instances or suspicious API calls.",
+        "Answers the question: 'Am I being attacked right now?'"
+      ]
+    },
+    {
+      "name": "Amazon Inspector",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Inspector.svg",
+      "features": [
+        "An automated vulnerability management service.",
+        "Scans EC2 instances and container images for vulnerabilities.",
+        "Checks for unintended network exposure and software flaws (CVEs).",
+        "It is a proactive service to find weaknesses before they are exploited.",
+        "Answers the question: 'Where are my systems vulnerable?'"
+      ]
+    },
+    {
+      "name": "Amazon Macie",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Macie.svg",
+      "features": [
+        "A fully managed data security and data privacy service.",
+        "Uses machine learning to discover and protect sensitive data in Amazon S3.",
+        "Identifies data like Personally Identifiable Information (PII) and financial data.",
+        "Monitors S3 buckets for security risks like public access.",
+        "Answers the question: 'Where is my sensitive data in S3 and is it secure?'"
+      ]
+    },
+    {
+      "name": "Amazon Cognito",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Cognito.svg",
+      "features": [
+        "Provides identity management for your applications.",
+        "Handles user sign-up, sign-in, and access control.",
+        "Supports social identity providers like Google, Facebook, and Apple.",
+        "Manages user pools (directories) and identity pools (for AWS credentials).",
+        "Answers the question: 'How do users sign in and get access to my app?'"
+      ]
+    }
+  ],
+  "Management & Governance": [
+    {
+      "name": "Amazon CloudWatch",
+      "logo": "https://icon.icepanel.io/AWS/svg/Management-Governance/CloudWatch.svg",
+      "features": [
+        "The central monitoring and observability service for AWS.",
+        "Collects metrics, logs, and events from AWS resources and applications.",
+        "Can visualize data in dashboards and create alarms based on thresholds.",
+        "Use case: Monitoring EC2 CPU utilization or application error logs.",
+        "Answers the question: 'What is the health and performance of my resources?'"
+      ]
+    },
+    {
+      "name": "AWS CloudTrail",
+      "logo": "https://icon.icepanel.io/AWS/svg/Management-Governance/CloudTrail.svg",
+      "features": [
+        "Provides an audit log of all actions taken in your AWS account.",
+        "Records every API call, whether from the console, SDK, or CLI.",
+        "Used for governance, compliance, and operational auditing.",
+        "A critical data source for security analysis and troubleshooting.",
+        "Answers the question: 'Who did what, and when?'"
+      ]
+    }
+  ],
+  "Migration & Transfer": [
     {
       "name": "AWS DataSync",
       "logo": "https://icon.icepanel.io/AWS/svg/Migration-Transfer/DataSync.svg",
@@ -584,135 +709,5 @@
         "Exam Keywords: 'BI', 'dashboards', 'visualizations', 'business analytics'."
       ]
     }
-  ],
-  "HPCAndNetworking": [
-    {
-      "name": "Cluster Placement Group",
-      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2.svg",
-      "features": [
-        "Packs instances close together inside a single Availability Zone.",
-        "Provides the lowest inter-instance latency.",
-        "Ideal for tightly-coupled High-Performance Computing (HPC) applications.",
-        "Increases risk of simultaneous failure if the underlying hardware fails.",
-        "Exam Keywords: 'low latency', 'HPC', 'tightly-coupled'."
-      ]
-    },
-    {
-      "name": "Partition Placement Group",
-      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2.svg",
-      "features": [
-        "Spreads instances across logical partitions (separate hardware racks).",
-        "Reduces the likelihood of correlated hardware failures.",
-        "Each partition is isolated from the others.",
-        "Ideal for large distributed workloads like Hadoop, Cassandra, and Kafka.",
-        "Exam Keywords: 'distributed', 'replicated', 'fault tolerance', 'Hadoop/Cassandra'."
-      ]
-    },
-    {
-      "name": "Spread Placement Group",
-      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2.svg",
-      "features": [
-        "Ensures each instance is on distinct underlying hardware.",
-        "Provides the maximum protection against simultaneous failures.",
-        "Used for a small number of critical instances that must be kept separate.",
-        "Ideal for applications like domain controllers or critical databases.",
-        "Exam Keywords: 'critical instances', 'maximum availability', 'separate hardware'."
-      ]
-    },
-    {
-      "name": "Elastic Network Adapter (ENA)",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
-      "features": [
-        "The standard, modern networking interface for most EC2 instances.",
-        "Provides high throughput (up to 100 Gbps) and reliable, low latency.",
-        "Enables 'Enhanced Networking' on supported instance types.",
-        "A great general-purpose network adapter for most workloads.",
-        "Exam Keywords: 'enhanced networking', 'high throughput'."
-      ]
-    },
-    {
-      "name": "Elastic Fabric Adapter (EFA)",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
-      "features": [
-        "A specialized network interface for HPC and machine learning.",
-        "Provides an OS-bypass capability for extremely low and consistent latency.",
-        "Allows HPC applications to communicate directly with the network hardware.",
-        "Must be used with a Cluster Placement Group for best performance.",
-        "An AWS alternative to NIC Teaming",
-        "Exam Keywords: 'HPC', 'machine learning', 'OS-bypass', 'extremely low latency'."
-      ]
-    }
-  ],
-  "Compute": [
-    {
-      "name": "EC2 Auto Scaling Group",
-      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2-Auto-Scaling.svg",
-      "features": [
-        "Automatically adjusts the number of EC2 instances based on demand.",
-        "Maintains application availability and ensures desired capacity.",
-        "Can scale based on metrics (e.g., CPU utilization), a schedule, or predictively.",
-        "Works with Elastic Load Balancing to distribute traffic to a healthy fleet of instances.",
-        "A core component for creating elastic and fault-tolerant architectures.",
-        "Exam Keywords: 'elasticity', 'scalability', 'high availability', 'handle load'."
-      ]
-    }
-  ],
-  "DNSandRouting": [
-    {
-      "name": "Route 53 - Failover Routing",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Route-53.svg",
-      "features": [
-        "A routing policy used for active/passive disaster recovery.",
-        "You configure a primary resource and a secondary (standby) resource.",
-        "Route 53 monitors the health of the primary resource.",
-        "If the primary fails, traffic is automatically rerouted to the secondary.",
-        "Exam Keywords: 'active/passive', 'disaster recovery', 'primary/secondary'."
-      ]
-    },
-    {
-      "name": "Route 53 - Weighted Routing",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Route-53.svg",
-      "features": [
-        "A routing policy that splits traffic between multiple resources based on percentages.",
-        "You assign a 'weight' to each record (e.g., 90% to A, 10% to B).",
-        "Used for active/active load balancing, canary testing, or blue/green deployments.",
-        "It is not used for a simple active/passive failover configuration.",
-        "Exam Keywords: 'split traffic', 'canary testing', 'blue/green', 'A/B testing'."
-      ]
-    },
-    {
-      "name": "Route 53 - Alias Record",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Route-53.svg",
-      "features": [
-        "An AWS-specific record type that points to AWS resources (like ELB, CloudFront).",
-        "Can be used at the Zone Apex (e.g., example.com).",
-        "Queries are free and it automatically updates if the resource's IP changes.",
-        "The best practice for connecting domains to AWS resources.",
-        "Enables the 'Evaluate Target Health' feature."
-      ]
-    },
-    {
-      "name": "Route 53 - CNAME Record",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Route-53.svg",
-      "features": [
-        "A standard DNS record that maps one domain name to another.",
-        "Cannot be used at the Zone Apex (e.g., example.com).",
-        "Less efficient than an Alias record as it requires an extra DNS lookup.",
-        "Should be avoided in favor of Alias records when pointing to AWS resources.",
-        "Does not support 'Evaluate Target Health'."
-      ]
-    },
-    {
-      "name": "Route 53 - Evaluate Target Health",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Route-53.svg",
-      "features": [
-        "A setting for Alias records that integrates with Route 53 health checks.",
-        "When 'Yes', Route 53 considers the health of the backend resources (e.g., EC2 instances).",
-        "If the ELB is up but all its instances are down, Route 53 will see the target as unhealthy.",
-        "This is critical for enabling accurate and automatic failover.",
-        "Best practice is to set this to 'Yes' for failover configurations."
-      ]
-    }
   ]
 }
-
