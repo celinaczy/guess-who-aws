@@ -189,7 +189,7 @@ body {
 }
 
 /* AWS Category Colors */
-.card-storage { border: 4px solid #2E73B8; } /* Blue */
+.card-storage { border: 4px solid green; } /* Blue */
 .card-compute { border: 4px solid #FF9900; } /* Orange */
 .card-database { border: 4px solid #2E73B8; } /* Blue */
 .card-networking { border: 4px solid #8C4FFF; } /* Purple */
@@ -197,3 +197,4 @@ body {
 .card-management { border: 4px solid #FFC300; } /* Yellow */
 .card-integration { border: 4px solid #399F84; } /* Teal */
 .card-migration { border: 4px solid #C4508A; } /* Magenta */
+.card-analytics { border: 4px solid purple; }

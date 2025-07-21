@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
         "Security": "card-security",
         "Management & Governance": "card-management",
         "Application Integration": "card-integration",
-        "Migration & Transfer": "card-migration"
+        "Migration & Transfer": "card-migration",
+        "Analytics": "card-analytics"
         // Add other categories here if you expand cards.json
     };
 

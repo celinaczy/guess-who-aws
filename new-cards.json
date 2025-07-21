@@ -416,7 +416,7 @@
     },
     {
       "name": "Elastic Network Adapter (ENA)",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/Elastic-Fabric-Adapter.svg",
       "features": [
         "The standard, modern networking interface for most EC2 instances.",
         "Provides high throughput (up to 100 Gbps) and reliable, low latency.",
@@ -427,7 +427,7 @@
     },
     {
       "name": "Elastic Fabric Adapter (EFA)",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/Elastic-Fabric-Adapter.svg",
       "features": [
         "A specialized network interface for HPC and machine learning.",
         "Provides an OS-bypass capability for extremely low and consistent latency.",
