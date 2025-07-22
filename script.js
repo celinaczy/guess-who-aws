@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cardsContainer = document.getElementById('cards-container');
 
     // Fetch the JSON data from the file
-    fetch('cards.json')
+    fetch('new-cards.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
