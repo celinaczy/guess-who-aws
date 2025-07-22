@@ -156,6 +156,19 @@
   ],
   "Compute": [
     {
+      "name": "AWS Elastic Beanstalk",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/Elastic-Beanstalk.svg",
+      "features": [
+        "A Platform as a Service (PaaS) for deploying and scaling web applications and services.",
+        "Allows developers to simply upload their code, and Beanstalk handles the deployment.",
+        "Automatically provisions and manages the underlying infrastructure (e.g., EC2, Auto Scaling, ELB).",
+        "Supports a wide range of platforms: Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker.",
+        "Manages application versions and supports multiple deployment policies (rolling, blue/green, etc.).",
+        "The service is free; you only pay for the AWS resources it provisions to store and run your application.",
+        "Exam Keywords: 'Platform as a Service (PaaS)', 'deploy web applications', 'developer convenience', 'automates infrastructure', 'upload code'"
+      ]
+    },
+    {
       "name": "EC2 Auto Scaling Group",
       "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2-Auto-Scaling.svg",
       "features": [
