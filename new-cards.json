@@ -156,6 +156,30 @@
   ],
   "Compute": [
     {
+      "name": "AWS Nitro System",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2.svg",
+      "features": [
+        "The underlying platform and next-generation hypervisor for modern EC2 instances.",
+        "Offloads virtualization, networking, and storage functions from the main CPU to dedicated hardware (Nitro Cards).",
+        "Maximizes performance by delivering nearly all of the server's compute and memory resources to the customer instance.",
+        "Provides enhanced security with a locked-down security model, minimized attack surface, and no operator access.",
+        "The foundational technology that enables features like bare metal instances, higher network speeds, and Nitro Enclaves.",
+        "Exam Keywords: 'EC2 hypervisor', 'dedicated hardware', 'performance', 'enhanced security', 'offload functions'"
+      ]
+    },
+    {
+      "name": "AWS Nitro Enclaves",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2.svg",
+      "features": [
+        "A feature of Nitro-based EC2 instances that creates highly isolated compute environments (enclaves) within an instance.",
+        "Designed to securely process highly sensitive data (e.g., PII, financial data, cryptographic keys).",
+        "The enclave is protected even from users with root or admin access on the parent instance.",
+        "Enclaves have no persistent storage, no network connectivity, and no interactive access.",
+        "Provides cryptographic attestation, allowing the enclave to prove its identity to other services before receiving secrets.",
+        "Exam Keywords: 'isolated compute', 'sensitive data', 'cryptographic attestation', 'secure enclave', 'no root access'"
+      ]
+    },
+    {
       "name": "AWS Elastic Beanstalk",
       "logo": "https://icon.icepanel.io/AWS/svg/Compute/Elastic-Beanstalk.svg",
       "features": [
