@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
         "Compute": "card-compute",
         "Databases": "card-database",
         "Networking": "card-networking",
+        "Security": "card-security",
+        "Management & Governance": "card-management",
         "Application Integration": "card-integration",
         "Migration & Transfer": "card-migration",
-        "Security": "card-security",
-        "Management & Governance": "card-management"
+        "Analytics": "card-analytics"
     };
 
     const cardsContainer = document.getElementById('cards-container');
