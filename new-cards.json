@@ -349,6 +349,18 @@
   ],
   "Networking": [
     {
+      "name": "Elastic Network Interface (ENI)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "features": [
+        "A virtual network card that you can attach to an EC2 instance in a VPC.",
+        "Is a distinct component that can be attached/detached from EC2 instances in the same AZ.",
+        "Has attributes like a MAC address, private IPv4, optional secondary IPs, and Security Groups.",
+        "The primary use case for its portability is enabling low-cost failover by moving the ENI to a standby instance.",
+        "An ENI is the logical resource; its performance capabilities are determined by technologies like ENA or EFA.",
+        "Exam Keywords: 'virtual network card', 'attach/detach', 'failover', 'standby instance', 'multiple IPs'"
+      ]
+    },
+    {
       "name": "Application Load Balancer (ALB)",
       "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg",
       "features": [
