@@ -156,6 +156,30 @@
   ],
   "Compute": [
     {
+      "name": "AWS Nitro System",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2.svg",
+      "features": [
+        "The underlying platform and next-generation hypervisor for modern EC2 instances.",
+        "Offloads virtualization, networking, and storage functions from the main CPU to dedicated hardware (Nitro Cards).",
+        "Maximizes performance by delivering nearly all of the server's compute and memory resources to the customer instance.",
+        "Provides enhanced security with a locked-down security model, minimized attack surface, and no operator access.",
+        "The foundational technology that enables features like bare metal instances, higher network speeds, and Nitro Enclaves.",
+        "Exam Keywords: 'EC2 hypervisor', 'dedicated hardware', 'performance', 'enhanced security', 'offload functions'"
+      ]
+    },
+    {
+      "name": "AWS Nitro Enclaves",
+      "logo": "https://icon.icepanel.io/AWS/svg/Compute/EC2.svg",
+      "features": [
+        "A feature of Nitro-based EC2 instances that creates highly isolated compute environments (enclaves) within an instance.",
+        "Designed to securely process highly sensitive data (e.g., PII, financial data, cryptographic keys).",
+        "The enclave is protected even from users with root or admin access on the parent instance.",
+        "Enclaves have no persistent storage, no network connectivity, and no interactive access.",
+        "Provides cryptographic attestation, allowing the enclave to prove its identity to other services before receiving secrets.",
+        "Exam Keywords: 'isolated compute', 'sensitive data', 'cryptographic attestation', 'secure enclave', 'no root access'"
+      ]
+    },
+    {
       "name": "AWS Elastic Beanstalk",
       "logo": "https://icon.icepanel.io/AWS/svg/Compute/Elastic-Beanstalk.svg",
       "features": [
@@ -348,6 +372,42 @@
     }
   ],
   "Networking": [
+    {
+      "name": "Elastic Network Interface (ENI)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "features": [
+        "A virtual network card that you can attach to an EC2 instance in a VPC.",
+        "Is a distinct component that can be attached/detached from EC2 instances in the same AZ.",
+        "Has attributes like a MAC address, private IPv4, optional secondary IPs, and Security Groups.",
+        "The primary use case for its portability is enabling low-cost failover by moving the ENI to a standby instance.",
+        "An ENI is the logical resource; its performance capabilities are determined by technologies like ENA or EFA.",
+        "Exam Keywords: 'virtual network card', 'attach/detach', 'failover', 'standby instance', 'multiple IPs'"
+      ]
+    },
+    {
+      "name": "Internet Gateway (IGW)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "features": [
+        "A horizontally scaled, redundant, and highly available VPC component that connects your VPC to the internet.",
+        "It is not deployed in an AZ; you attach one to your VPC.",
+        "Serves as the target in a public subnet's route table for internet-routable traffic (e.g., a route for 0.0.0.0/0).",
+        "Performs network address translation for instances that have been assigned public IP addresses.",
+        "Enables two-way communication for resources in a public subnet.",
+        "Exam Keywords: 'VPC to internet', 'public subnet', 'route table target', '0.0.0.0/0', 'highly available'"
+      ]
+    },
+    {
+      "name": "NAT Gateway",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "features": [
+        "A managed Network Address Translation (NAT) service that allows instances in a private subnet to initiate outbound traffic to the internet.",
+        "Crucially, it prevents the internet from initiating connections with those private instances.",
+        "It is stateful, meaning return traffic from the internet is automatically allowed back to the originating instance.",
+        "Must be deployed in a public subnet and is associated with an Elastic IP address.",
+        "For high availability, deploy a NAT Gateway in each AZ and configure route tables in that AZ to use it.",
+        "Exam Keywords: 'private subnet', 'outbound internet access', 'managed NAT', 'high availability', 'Elastic IP'"
+      ]
+    },
     {
       "name": "Application Load Balancer (ALB)",
       "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg",
