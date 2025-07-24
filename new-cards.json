@@ -384,32 +384,30 @@
         "Exam Keywords: 'virtual network card', 'attach/detach', 'failover', 'standby instance', 'multiple IPs'"
       ]
     },
-    [
-      {
-        "name": "Internet Gateway (IGW)",
-        "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
-        "features": [
-          "A horizontally scaled, redundant, and highly available VPC component that connects your VPC to the internet.",
-          "It is not deployed in an AZ; you attach one to your VPC.",
-          "Serves as the target in a public subnet's route table for internet-routable traffic (e.g., a route for 0.0.0.0/0).",
-          "Performs network address translation for instances that have been assigned public IP addresses.",
-          "Enables two-way communication for resources in a public subnet.",
-          "Exam Keywords: 'VPC to internet', 'public subnet', 'route table target', '0.0.0.0/0', 'highly available'"
-        ]
-      },
-      {
-        "name": "NAT Gateway",
-        "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
-        "features": [
-          "A managed Network Address Translation (NAT) service that allows instances in a private subnet to initiate outbound traffic to the internet.",
-          "Crucially, it prevents the internet from initiating connections with those private instances.",
-          "It is stateful, meaning return traffic from the internet is automatically allowed back to the originating instance.",
-          "Must be deployed in a public subnet and is associated with an Elastic IP address.",
-          "For high availability, deploy a NAT Gateway in each AZ and configure route tables in that AZ to use it.",
-          "Exam Keywords: 'private subnet', 'outbound internet access', 'managed NAT', 'high availability', 'Elastic IP'"
-        ]
-      }
-    ],
+    {
+      "name": "Internet Gateway (IGW)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "features": [
+        "A horizontally scaled, redundant, and highly available VPC component that connects your VPC to the internet.",
+        "It is not deployed in an AZ; you attach one to your VPC.",
+        "Serves as the target in a public subnet's route table for internet-routable traffic (e.g., a route for 0.0.0.0/0).",
+        "Performs network address translation for instances that have been assigned public IP addresses.",
+        "Enables two-way communication for resources in a public subnet.",
+        "Exam Keywords: 'VPC to internet', 'public subnet', 'route table target', '0.0.0.0/0', 'highly available'"
+      ]
+    },
+    {
+      "name": "NAT Gateway",
+      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "features": [
+        "A managed Network Address Translation (NAT) service that allows instances in a private subnet to initiate outbound traffic to the internet.",
+        "Crucially, it prevents the internet from initiating connections with those private instances.",
+        "It is stateful, meaning return traffic from the internet is automatically allowed back to the originating instance.",
+        "Must be deployed in a public subnet and is associated with an Elastic IP address.",
+        "For high availability, deploy a NAT Gateway in each AZ and configure route tables in that AZ to use it.",
+        "Exam Keywords: 'private subnet', 'outbound internet access', 'managed NAT', 'high availability', 'Elastic IP'"
+      ]
+    },
     {
       "name": "Application Load Balancer (ALB)",
       "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg",
