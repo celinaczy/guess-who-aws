@@ -416,7 +416,7 @@
         "Default choice for modern web applications and microservices.",
         "Supports content-aware routing based on path or hostname.",
         "Ideal for container-based architectures like ECS and EKS.",
-        "Can route traffic to serverless Lambda functions.",
+        "Can roFsecurute traffic to serverless Lambda functions.",
         "Supports WebSockets."
       ]
     },
@@ -780,6 +780,74 @@
         "Can connect to a wide variety of data sources like S3, Redshift, RDS, and Athena.",
         "Features a pay-per-session pricing model, making it cost-effective.",
         "Exam Keywords: 'BI', 'dashboards', 'visualizations', 'business analytics'."
+      ]
+    }
+  ],
+  "Encryption": [
+    {
+      "name": "Encryption in Transit (TLS/SSL)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Certificate-Manager.svg",
+      "features": [
+        "Secures data as it travels over a network (e.g., from a user to a load balancer).",
+        "Uses Transport Layer Security (TLS) protocol.",
+        "Key Service: AWS Certificate Manager (ACM) for provisioning and managing TLS certificates.",
+        "Use case: Applying HTTPS to your Application Load Balancer or CloudFront distribution.",
+        "Answers the question: 'Is my data safe while moving between systems?'"
+      ]
+    },
+    {
+      "name": "Server-Side Encryption - S3 (SSE-S3)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service-S3.svg",
+      "features": [
+        "Encrypts data at rest after it is received by Amazon S3.",
+        "Encryption keys are fully managed, created, and rotated by AWS S3 itself.",
+        "This is the easiest, 'check-the-box' encryption option for S3.",
+        "Provides a baseline level of encryption with the least operational overhead.",
+        "Answers the question: 'How can I easily encrypt my S3 objects?'"
+      ]
+    },
+    {
+      "name": "Server-Side Encryption - KMS (SSE-KMS)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Key-Management-Service.svg",
+      "features": [
+        "Encrypts data at rest using keys from AWS Key Management Service (KMS).",
+        "Provides centralized key management, key rotation policies, and granular access control.",
+        "Creates an audit trail in AWS CloudTrail to track key usage.",
+        "The most common and flexible server-side encryption method.",
+        "Answers the question: 'How can I encrypt my data while also controlling and auditing the keys?'"
+      ]
+    },
+    {
+      "name": "AWS Key Management Service (KMS)",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Key-Management-Service.svg",
+      "features": [
+        "A managed service for creating and controlling encryption keys.",
+        "Uses 'Envelope Encryption' to protect data.",
+        "Supports 'Multi-Region Keys' for cross-region replication of encrypted data.",
+        "Integrates with most AWS services (S3, EBS, RDS) to provide encryption at rest.",
+        "Answers the question: 'Where can I securely manage my encryption keys?'"
+      ]
+    },
+    {
+      "name": "AWS Secrets Manager",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Secrets-Manager.svg",
+      "features": [
+        "A service for storing and retrieving secrets like database credentials and API keys.",
+        "Supports automatic rotation of credentials for services like Amazon RDS.",
+        "Helps you replace hardcoded credentials in code with a secure API call.",
+        "Encrypts secrets at rest using AWS KMS.",
+        "Answers the question: 'How can I securely store and automatically rotate my application secrets?'"
+      ]
+    },
+    {
+      "name": "AWS CloudHSM",
+      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/CloudHSM.svg",
+      "features": [
+        "A cloud-based Hardware Security Module (HSM).",
+        "Provides a dedicated, single-tenant hardware appliance for your keys.",
+        "Used to meet strict contractual or regulatory compliance requirements (e.g., FIPS 140-2 Level 3).",
+        "You have exclusive control over the keys, but it has higher cost and overhead than KMS.",
+        "Answers the question: 'How can I meet compliance that requires a dedicated hardware security device?'"
       ]
     }
   ]
