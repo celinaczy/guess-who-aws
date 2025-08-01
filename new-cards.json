@@ -374,7 +374,7 @@
   "Networking": [
     {
       "name": "Elastic Network Interface (ENI)",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "logo": "data:image/png;base64,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",
       "features": [
         "A virtual network card that you can attach to an EC2 instance in a VPC.",
         "Is a distinct component that can be attached/detached from EC2 instances in the same AZ.",
@@ -386,7 +386,7 @@
     },
     {
       "name": "Internet Gateway (IGW)",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "logo": "data:image/png;base64,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",
       "features": [
         "A horizontally scaled, redundant, and highly available VPC component that connects your VPC to the internet.",
         "It is not deployed in an AZ; you attach one to your VPC.",
@@ -398,7 +398,7 @@
     },
     {
       "name": "NAT Gateway",
-      "logo": "https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/VPC.svg",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLASKKUDLmm4D9_tu2_OL_wzR_WFWUbk7aShKVzwkiW56Bvt1kASiNQ9ZOrpRc3WzlhY0&usqp=CAU",
       "features": [
         "A managed Network Address Translation (NAT) service that allows instances in a private subnet to initiate outbound traffic to the internet.",
         "Crucially, it prevents the internet from initiating connections with those private instances.",
@@ -783,38 +783,16 @@
       ]
     }
   ],
-  "Encryption": [
+  "EncryptionServices": [
     {
-      "name": "Encryption in Transit (TLS/SSL)",
+      "name": "AWS Certificate Manager (ACM)",
       "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Certificate-Manager.svg",
       "features": [
-        "Secures data as it travels over a network (e.g., from a user to a load balancer).",
-        "Uses Transport Layer Security (TLS) protocol.",
-        "Key Service: AWS Certificate Manager (ACM) for provisioning and managing TLS certificates.",
-        "Use case: Applying HTTPS to your Application Load Balancer or CloudFront distribution.",
-        "Answers the question: 'Is my data safe while moving between systems?'"
-      ]
-    },
-    {
-      "name": "Server-Side Encryption - S3 (SSE-S3)",
-      "logo": "https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service-S3.svg",
-      "features": [
-        "Encrypts data at rest after it is received by Amazon S3.",
-        "Encryption keys are fully managed, created, and rotated by AWS S3 itself.",
-        "This is the easiest, 'check-the-box' encryption option for S3.",
-        "Provides a baseline level of encryption with the least operational overhead.",
-        "Answers the question: 'How can I easily encrypt my S3 objects?'"
-      ]
-    },
-    {
-      "name": "Server-Side Encryption - KMS (SSE-KMS)",
-      "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Key-Management-Service.svg",
-      "features": [
-        "Encrypts data at rest using keys from AWS Key Management Service (KMS).",
-        "Provides centralized key management, key rotation policies, and granular access control.",
-        "Creates an audit trail in AWS CloudTrail to track key usage.",
-        "The most common and flexible server-side encryption method.",
-        "Answers the question: 'How can I encrypt my data while also controlling and auditing the keys?'"
+        "Provisions, manages, and deploys public and private TLS/SSL certificates.",
+        "Used to enable HTTPS for services like Load Balancers and CloudFront distributions.",
+        "Integrates with other AWS services to secure network traffic (encryption in transit).",
+        "Public certificates provided by ACM are free.",
+        "Answers the question: 'How can I easily manage TLS/SSL certificates for my services?'"
       ]
     },
     {
@@ -822,9 +800,9 @@
       "logo": "https://icon.icepanel.io/AWS/svg/Security-Identity-Compliance/Key-Management-Service.svg",
       "features": [
         "A managed service for creating and controlling encryption keys.",
-        "Uses 'Envelope Encryption' to protect data.",
+        "Uses 'Envelope Encryption' to protect data at rest.",
         "Supports 'Multi-Region Keys' for cross-region replication of encrypted data.",
-        "Integrates with most AWS services (S3, EBS, RDS) to provide encryption at rest.",
+        "Integrates with most AWS services (S3, EBS, RDS) to provide encryption.",
         "Answers the question: 'Where can I securely manage my encryption keys?'"
       ]
     },
